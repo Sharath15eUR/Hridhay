@@ -1,0 +1,375 @@
+Q1) Create a file and add executable permission to all users (user, group and others)
+
+Answer:
+
+forge@forge-virtual-machine:~/Desktop$ touch new_file.txt
+forge@forge-virtual-machine:~/Desktop$ ls -l
+total 0
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:12 new_file.txt
+forge@forge-virtual-machine:~/Desktop$ chmod a+x new_file.txt
+forge@forge-virtual-machine:~/Desktop$ ls -l
+total 0
+-rwxrwxr-x 1 forge forge 0 Jan 23 00:12 new_file.txt
+forge@forge-virtual-machine:~/Desktop$
+
+Q2) create a file and remove write permission for group user alone.
+
+Answer:
+
+forge@forge-virtual-machine:~/Desktop$ touch new_file_1.txt
+forge@forge-virtual-machine:~/Desktop$ ls -la
+total 8
+drwxr-xr-x  2 forge forge 4096 Jan 23 00:15 .
+drwxr-x--- 14 forge forge 4096 Mar 18  2024 ..
+-rw-rw-r--  1 forge forge    0 Jan 23 00:15 new_file_1.txt
+-rwxrwxr-x  1 forge forge    0 Jan 23 00:12 new_file.txt
+forge@forge-virtual-machine:~/Desktop$ chmod g-w new_file_1.txt
+forge@forge-virtual-machine:~/Desktop$ ls -la
+total 8
+drwxr-xr-x  2 forge forge 4096 Jan 23 00:15 .
+drwxr-x--- 14 forge forge 4096 Mar 18  2024 ..
+-rw-r--r--  1 forge forge    0 Jan 23 00:15 new_file_1.txt
+-rwxrwxr-x  1 forge forge    0 Jan 23 00:12 new_file.txt
+forge@forge-virtual-machine:~/Desktop$ 
+
+Q3) Create a file and add a softlink to the file in different directory (Eg : Create a file in dir1/dir2/file and create a softlink for file inside dir1)
+
+Answer:
+
+forge@forge-virtual-machine:~/Desktop$ mkdir dir1
+forge@forge-virtual-machine:~/Desktop$ cd dir1
+forge@forge-virtual-machine:~/Desktop/dir1$ mkdir dir2
+forge@forge-virtual-machine:~/Desktop/dir1$ cd dir2
+forge@forge-virtual-machine:~/Desktop/dir1/dir2$ touch new_file.txt
+forge@forge-virtual-machine:~/Desktop/dir1/dir2$ ls
+new_file.txt
+forge@forge-virtual-machine:~/Desktop/dir1/dir2$ ln -s new_file.txt ../link_file
+forge@forge-virtual-machine:~/Desktop/dir1/dir2$ ls
+new_file.txt
+forge@forge-virtual-machine:~/Desktop/dir1/dir2$ cd ..
+forge@forge-virtual-machine:~/Desktop/dir1$ ls
+dir2  link_file
+forge@forge-virtual-machine:~/Desktop/dir1$ ls -l
+total 4
+drwxrwxr-x 2 forge forge 4096 Jan 23 00:37 dir2
+lrwxrwxrwx 1 forge forge   12 Jan 23 00:39 link_file -> new_file.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ 
+
+Q4) Use ps command with options to display all active process running on the system
+
+Answer:
+
+forge@forge-virtual-machine:~/Desktop$ ps -A
+    PID TTY          TIME CMD
+      1 ?        00:00:05 systemd
+      2 ?        00:00:00 kthreadd
+      3 ?        00:00:00 rcu_gp
+      4 ?        00:00:00 rcu_par_gp
+      5 ?        00:00:00 slub_flushwq
+      6 ?        00:00:00 netns
+     11 ?        00:00:00 mm_percpu_wq
+     12 ?        00:00:00 rcu_tasks_kthread
+     13 ?        00:00:00 rcu_tasks_rude_kthread
+     14 ?        00:00:00 rcu_tasks_trace_kthread
+     15 ?        00:00:00 ksoftirqd/0
+     16 ?        00:00:00 rcu_preempt
+     17 ?        00:00:00 migration/0
+     18 ?        00:00:00 idle_inject/0
+     19 ?        00:00:00 cpuhp/0
+     20 ?        00:00:00 cpuhp/1
+     21 ?        00:00:00 idle_inject/1
+     22 ?        00:00:01 migration/1
+     23 ?        00:00:01 ksoftirqd/1
+     26 ?        00:00:00 kdevtmpfs
+     27 ?        00:00:00 inet_frag_wq
+     29 ?        00:00:00 kauditd
+     31 ?        00:00:00 khungtaskd
+     32 ?        00:00:00 oom_reaper
+     34 ?        00:00:00 writeback
+     35 ?        00:00:00 kcompactd0
+     36 ?        00:00:00 ksmd
+     37 ?        00:00:00 khugepaged
+     38 ?        00:00:00 kintegrityd
+     39 ?        00:00:00 kblockd
+     40 ?        00:00:00 blkcg_punt_bio
+     42 ?        00:00:00 tpm_dev_wq
+     43 ?        00:00:00 ata_sff
+     44 ?        00:00:00 md
+     45 ?        00:00:00 md_bitmap
+     46 ?        00:00:00 edac-poller
+     47 ?        00:00:00 devfreq_wq
+     48 ?        00:00:00 watchdogd
+     49 ?        00:00:00 kworker/1:1H-kblockd
+     50 ?        00:00:00 kswapd0
+     51 ?        00:00:00 ecryptfs-kthread
+     52 ?        00:00:00 kthrotld
+     53 ?        00:00:00 irq/24-pciehp
+     54 ?        00:00:00 irq/25-pciehp
+     55 ?        00:00:00 irq/26-pciehp
+     56 ?        00:00:00 irq/27-pciehp
+     57 ?        00:00:00 irq/28-pciehp
+     58 ?        00:00:00 irq/29-pciehp
+     59 ?        00:00:00 irq/30-pciehp
+     60 ?        00:00:00 irq/31-pciehp
+     61 ?        00:00:00 irq/32-pciehp
+     62 ?        00:00:00 irq/33-pciehp
+     63 ?        00:00:00 irq/34-pciehp
+     64 ?        00:00:00 irq/35-pciehp
+     65 ?        00:00:00 irq/36-pciehp
+     66 ?        00:00:00 irq/37-pciehp
+     67 ?        00:00:00 irq/38-pciehp
+     68 ?        00:00:00 irq/39-pciehp
+     69 ?        00:00:00 irq/40-pciehp
+     70 ?        00:00:00 irq/41-pciehp
+     71 ?        00:00:00 irq/42-pciehp
+     72 ?        00:00:00 irq/43-pciehp
+     73 ?        00:00:00 irq/44-pciehp
+     74 ?        00:00:00 irq/45-pciehp
+     75 ?        00:00:00 irq/46-pciehp
+     76 ?        00:00:00 irq/47-pciehp
+     77 ?        00:00:00 irq/48-pciehp
+     78 ?        00:00:00 irq/49-pciehp
+     79 ?        00:00:00 irq/50-pciehp
+     80 ?        00:00:00 irq/51-pciehp
+     81 ?        00:00:00 irq/52-pciehp
+     82 ?        00:00:00 irq/53-pciehp
+     83 ?        00:00:00 irq/54-pciehp
+     84 ?        00:00:00 irq/55-pciehp
+     85 ?        00:00:00 acpi_thermal_pm
+     86 ?        00:00:00 scsi_eh_0
+     87 ?        00:00:00 scsi_tmf_0
+     88 ?        00:00:00 scsi_eh_1
+     89 ?        00:00:00 scsi_tmf_1
+     93 ?        00:00:00 mld
+     94 ?        00:00:00 ipv6_addrconf
+     95 ?        00:00:00 kworker/0:1H-ttm
+    102 ?        00:00:00 kstrp
+    104 ?        00:00:00 kworker/u257:0-hci0
+    108 ?        00:00:00 charger_manager
+    153 ?        00:00:00 mpt_poll_0
+    154 ?        00:00:00 mpt/0
+    155 ?        00:00:00 scsi_eh_2
+    156 ?        00:00:00 scsi_tmf_2
+    157 ?        00:00:00 scsi_eh_3
+    158 ?        00:00:00 scsi_tmf_3
+    159 ?        00:00:00 scsi_eh_4
+    161 ?        00:00:00 scsi_tmf_4
+    163 ?        00:00:00 scsi_eh_5
+    164 ?        00:00:00 scsi_tmf_5
+    165 ?        00:00:00 scsi_eh_6
+    166 ?        00:00:00 scsi_tmf_6
+    167 ?        00:00:00 scsi_eh_7
+    168 ?        00:00:00 scsi_tmf_7
+    169 ?        00:00:00 scsi_eh_8
+    170 ?        00:00:00 scsi_tmf_8
+    171 ?        00:00:00 scsi_eh_9
+    172 ?        00:00:00 scsi_tmf_9
+    173 ?        00:00:00 scsi_eh_10
+    174 ?        00:00:00 scsi_tmf_10
+    175 ?        00:00:00 scsi_eh_11
+    176 ?        00:00:00 scsi_tmf_11
+    177 ?        00:00:00 scsi_eh_12
+    178 ?        00:00:00 scsi_tmf_12
+    179 ?        00:00:00 scsi_eh_13
+    180 ?        00:00:00 scsi_tmf_13
+    181 ?        00:00:00 scsi_eh_14
+    182 ?        00:00:00 scsi_tmf_14
+    183 ?        00:00:00 scsi_eh_15
+    184 ?        00:00:00 scsi_tmf_15
+    185 ?        00:00:00 scsi_eh_16
+    186 ?        00:00:00 scsi_tmf_16
+    187 ?        00:00:00 scsi_eh_17
+    188 ?        00:00:00 scsi_tmf_17
+    189 ?        00:00:00 scsi_eh_18
+    190 ?        00:00:00 scsi_tmf_18
+    191 ?        00:00:00 scsi_eh_19
+    192 ?        00:00:00 scsi_tmf_19
+    193 ?        00:00:00 scsi_eh_20
+    194 ?        00:00:00 scsi_tmf_20
+    195 ?        00:00:00 scsi_eh_21
+    196 ?        00:00:00 scsi_tmf_21
+    197 ?        00:00:00 scsi_eh_22
+    198 ?        00:00:00 scsi_tmf_22
+    199 ?        00:00:00 scsi_eh_23
+    200 ?        00:00:00 scsi_tmf_23
+    201 ?        00:00:00 scsi_eh_24
+    202 ?        00:00:00 scsi_tmf_24
+    203 ?        00:00:00 scsi_eh_25
+    204 ?        00:00:00 scsi_tmf_25
+    205 ?        00:00:00 scsi_eh_26
+    206 ?        00:00:00 scsi_tmf_26
+    207 ?        00:00:00 scsi_eh_27
+    208 ?        00:00:00 scsi_tmf_27
+    209 ?        00:00:00 scsi_eh_28
+    210 ?        00:00:00 scsi_tmf_28
+    211 ?        00:00:00 scsi_eh_29
+    212 ?        00:00:00 scsi_tmf_29
+    213 ?        00:00:00 scsi_eh_30
+    214 ?        00:00:00 scsi_tmf_30
+    215 ?        00:00:00 scsi_eh_31
+    216 ?        00:00:00 scsi_tmf_31
+    236 ?        00:00:00 kworker/u256:25-events_power_efficient
+    243 ?        00:00:00 scsi_eh_32
+    244 ?        00:00:00 scsi_tmf_32
+    246 ?        00:00:02 kworker/u256:33-events_unbound
+    272 ?        00:00:02 jbd2/sda3-8
+    273 ?        00:00:00 ext4-rsv-conver
+    312 ?        00:00:01 systemd-journal
+    346 ?        00:00:00 vmware-vmblock-
+    352 ?        00:00:00 ipmi-msghandler
+    364 ?        00:00:00 systemd-udevd
+    365 ?        00:00:00 irq/16-vmwgfx
+    366 ?        00:00:00 ttm
+    404 ?        00:00:00 irq/57-vmw_vmci
+    405 ?        00:00:00 irq/58-vmw_vmci
+    406 ?        00:00:00 irq/59-vmw_vmci
+    436 ?        00:00:00 cryptd
+    619 ?        00:00:00 kworker/u257:2-hci0
+    645 ?        00:00:01 systemd-oomd
+    646 ?        00:00:00 systemd-resolve
+    647 ?        00:00:00 systemd-timesyn
+    664 ?        00:00:00 VGAuthService
+    666 ?        00:00:03 vmtoolsd
+    692 ?        00:00:00 accounts-daemon
+    694 ?        00:00:00 acpid
+    697 ?        00:00:00 avahi-daemon
+    698 ?        00:00:00 bluetoothd
+    699 ?        00:00:00 cron
+    700 ?        00:00:00 dbus-daemon
+    701 ?        00:00:00 NetworkManager
+    706 ?        00:00:00 irqbalance
+    708 ?        00:00:00 networkd-dispat
+    709 ?        00:00:00 polkitd
+    710 ?        00:00:00 power-profiles-
+    711 ?        00:00:00 rsyslogd
+    713 ?        00:02:23 snapd
+    714 ?        00:00:00 switcheroo-cont
+    715 ?        00:00:00 systemd-logind
+    716 ?        00:00:00 udisksd
+    718 ?        00:00:00 wpa_supplicant
+    769 ?        00:00:00 avahi-daemon
+    796 ?        00:00:00 unattended-upgr
+    799 ?        00:00:00 ModemManager
+    835 ?        00:00:00 gdm3
+    870 ?        00:00:00 gdm-session-wor
+    918 ?        00:00:00 kerneloops
+    920 ?        00:00:00 kerneloops
+   1033 ?        00:00:01 systemd
+   1042 ?        00:00:00 (sd-pam)
+   1053 ?        00:00:00 pipewire
+   1054 ?        00:00:00 pipewire-media-
+   1056 ?        00:00:02 pulseaudio
+   1071 ?        00:00:00 gnome-keyring-d
+   1076 ?        00:00:00 rtkit-daemon
+   1077 tty2     00:00:00 gdm-wayland-ses
+   1078 ?        00:00:02 snort
+   1081 ?        00:00:00 dbus-daemon
+   1092 tty2     00:00:00 gnome-session-b
+   1094 ?        00:00:00 xdg-document-po
+   1105 ?        00:00:00 xdg-permission-
+   1111 ?        00:00:00 fusermount3
+   1122 ?        00:00:00 gvfsd
+   1131 ?        00:00:00 gvfsd-fuse
+   1182 ?        00:00:00 gnome-session-c
+   1196 ?        00:00:00 gnome-session-b
+   1210 ?        00:00:00 at-spi-bus-laun
+   1214 ?        00:00:23 gnome-shell
+   1222 ?        00:00:00 dbus-daemon
+   1310 ?        00:00:00 gnome-shell-cal
+   1313 ?        00:00:00 upowerd
+   1328 ?        00:00:00 evolution-sourc
+   1334 ?        00:00:00 gvfs-udisks2-vo
+   1356 ?        00:00:00 gvfs-gphoto2-vo
+   1363 ?        00:00:00 gvfs-afc-volume
+   1368 ?        00:00:00 gvfs-goa-volume
+   1372 ?        00:00:00 goa-daemon
+   1376 ?        00:00:00 evolution-calen
+   1385 ?        00:00:00 dconf-service
+   1389 ?        00:00:00 evolution-addre
+   1405 ?        00:00:00 goa-identity-se
+   1407 ?        00:00:00 gvfs-mtp-volume
+   1415 ?        00:00:00 packagekitd
+   1425 ?        00:00:00 gvfsd-trash
+   1431 ?        00:00:00 at-spi2-registr
+   1433 ?        00:00:00 gjs
+   1437 ?        00:00:00 sh
+   1438 ?        00:00:00 gsd-a11y-settin
+   1439 ?        00:00:00 gsd-color
+   1441 ?        00:00:00 gsd-datetime
+   1443 ?        00:00:00 gsd-housekeepin
+   1448 ?        00:00:00 gsd-keyboard
+   1450 ?        00:00:01 ibus-daemon
+   1455 ?        00:00:00 gsd-media-keys
+   1458 ?        00:00:00 gsd-power
+   1459 ?        00:00:00 gsd-print-notif
+   1460 ?        00:00:00 gsd-rfkill
+   1461 ?        00:00:00 gsd-screensaver
+   1462 ?        00:00:00 gsd-sharing
+   1463 ?        00:00:00 gsd-smartcard
+   1464 ?        00:00:00 gsd-sound
+   1465 ?        00:00:00 gsd-wacom
+   1536 ?        00:00:00 evolution-alarm
+   1548 ?        00:00:00 gsd-disk-utilit
+   1563 ?        00:00:00 ibus-dconf
+   1565 ?        00:00:00 gsd-printer
+   1566 ?        00:00:01 ibus-extension-
+   1580 ?        00:00:00 ibus-portal
+   1581 ?        00:00:03 vmtoolsd
+   1656 ?        00:00:00 gvfsd-metadata
+   1669 ?        00:00:00 ibus-engine-sim
+   1672 ?        00:00:00 Xwayland
+   1711 ?        00:00:00 colord
+   1720 ?        00:00:02 tracker-miner-f
+   1727 ?        00:00:00 xdg-desktop-por
+   1746 ?        00:00:00 xdg-desktop-por
+   1780 ?        00:00:03 gjs
+   1782 ?        00:00:00 gjs
+   1825 ?        00:00:00 gsd-xsettings
+   1832 ?        00:00:00 xdg-desktop-por
+   1888 ?        00:00:00 ibus-x11
+   2492 ?        00:00:00 update-notifier
+   4419 ?        00:00:00 cupsd
+   4439 ?        00:00:00 cups-browsed
+   5722 ?        00:00:00 gnome-terminal
+   5723 ?        00:00:00 gnome-terminal.
+   5749 ?        00:00:04 gnome-terminal-
+   5767 pts/0    00:00:00 bash
+   5997 ?        00:00:01 kworker/0:0-events
+   6457 ?        00:00:00 kworker/1:3-cgroup_destroy
+   6521 ?        00:00:00 kworker/0:1-events
+   6524 ?        00:00:00 kworker/0:2H-kblockd
+   6597 ?        00:00:00 kworker/1:2H-kblockd
+   6625 ?        00:00:00 kworker/u256:0-events_unbound
+   6738 ?        00:00:00 kworker/1:0-events
+   6769 ?        00:00:00 snapd-desktop-i
+   6945 ?        00:00:00 snapd-desktop-i
+   7207 ?        00:00:00 kworker/0:2-events
+   7286 pts/0    00:00:00 ps
+forge@forge-virtual-machine:~/Desktop$ 
+
+Q5) Create 3 files in a dir1 and re-direct the output of list command with sorted by timestamp of the files to a file
+
+Answer:
+
+forge@forge-virtual-machine:~/Desktop/dir1$ touch file1.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ touch file2.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ touch file3.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ ls -l
+total 0
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:53 file1.txt
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:53 file2.txt
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:54 file3.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ ls -lt > output_file.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ ls -l
+total 4
+-rw-rw-r-- 1 forge forge   0 Jan 23 00:53 file1.txt
+-rw-rw-r-- 1 forge forge   0 Jan 23 00:53 file2.txt
+-rw-rw-r-- 1 forge forge   0 Jan 23 00:54 file3.txt
+-rw-rw-r-- 1 forge forge 214 Jan 23 00:54 output_file.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ cat output_file.txt
+total 0
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:54 output_file.txt
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:54 file3.txt
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:53 file2.txt
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:53 file1.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ 
