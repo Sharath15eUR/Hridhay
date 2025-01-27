@@ -1,0 +1,13 @@
+Q1) Create a file and add executable permission to all users (user, group and others)
+
+Answer:
+
+forge@forge-virtual-machine:~/Desktop$ touch new_file.txt
+forge@forge-virtual-machine:~/Desktop$ ls -l
+total 0
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:12 new_file.txt
+forge@forge-virtual-machine:~/Desktop$ chmod a+x new_file.txt
+forge@forge-virtual-machine:~/Desktop$ ls -l
+total 0
+-rwxrwxr-x 1 forge forge 0 Jan 23 00:12 new_file.txt
+forge@forge-virtual-machine:~/Desktop$

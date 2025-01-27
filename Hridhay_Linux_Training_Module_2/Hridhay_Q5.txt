@@ -1,0 +1,7 @@
+Q5) Use the networking tool command and print all the gateway available in a sorted manner
+
+Answer:
+
+┌──(kali㉿kali)-[/home/kali]
+└─PS> ip route | awk '/default/ {print $3}' | sort
+192.168.190.2

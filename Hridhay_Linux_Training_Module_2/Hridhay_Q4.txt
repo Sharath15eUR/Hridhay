@@ -1,0 +1,4 @@
+Q4) Write a code to identify the process with the highest memory usage and then terminate it.
+Answer:
+
+timeout 5 kill -9 $(ps aux --sort=-%mem | awk 'NR==2 {print $2}')

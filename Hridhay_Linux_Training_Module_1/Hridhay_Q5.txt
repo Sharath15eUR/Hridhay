@@ -1,0 +1,26 @@
+Q5) Create 3 files in a dir1 and re-direct the output of list command with sorted by timestamp of the files to a file
+
+Answer:
+
+forge@forge-virtual-machine:~/Desktop/dir1$ touch file1.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ touch file2.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ touch file3.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ ls -l
+total 0
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:53 file1.txt
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:53 file2.txt
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:54 file3.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ ls -lt > output_file.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ ls -l
+total 4
+-rw-rw-r-- 1 forge forge   0 Jan 23 00:53 file1.txt
+-rw-rw-r-- 1 forge forge   0 Jan 23 00:53 file2.txt
+-rw-rw-r-- 1 forge forge   0 Jan 23 00:54 file3.txt
+-rw-rw-r-- 1 forge forge 214 Jan 23 00:54 output_file.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ cat output_file.txt
+total 0
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:54 output_file.txt
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:54 file3.txt
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:53 file2.txt
+-rw-rw-r-- 1 forge forge 0 Jan 23 00:53 file1.txt
+forge@forge-virtual-machine:~/Desktop/dir1$ 

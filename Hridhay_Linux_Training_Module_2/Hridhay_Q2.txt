@@ -1,0 +1,57 @@
+Q2) Replace all occurrences of "localhost" with "127.0.0.1" in a configuration file named config.txt, and save the updated file as updated_config.txt.
+
+Answer:
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ ls -l                                                        
+total 4
+-rw-rw-r-- 1 kali kali 257 Jan 27 08:20 config.txt
+                                                                             
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sed 's/localhost/127.0.0.1/g' config.txt > updated_config.txt
+                                                                             
+┌──(kali㉿kali)-[~/Downloads]
+└─$ ls -l
+total 8
+-rw-rw-r-- 1 kali kali 257 Jan 27 08:20 config.txt
+-rw-rw-r-- 1 kali kali 257 Jan 27 08:23 updated_config.txt
+                                                                             
+┌──(kali㉿kali)-[~/Downloads]
+└─$ cat config.txt
+# Application Configuration File
+
+[server]
+host = localhost
+port = 8080
+
+[database]
+db_host = localhost
+db_port = 3306
+db_name = app_db
+db_user = admin
+db_password = password123
+
+[logging]
+log_file = /var/log/app.log
+log_level = INFO
+log_server = localhost
+                                                                             
+┌──(kali㉿kali)-[~/Downloads]
+└─$ cat updated_config.txt
+# Application Configuration File
+
+[server]
+host = 127.0.0.1
+port = 8080
+
+[database]
+db_host = 127.0.0.1
+db_port = 3306
+db_name = app_db
+db_user = admin
+db_password = password123
+
+[logging]
+log_file = /var/log/app.log
+log_level = INFO
+log_server = 127.0.0.1

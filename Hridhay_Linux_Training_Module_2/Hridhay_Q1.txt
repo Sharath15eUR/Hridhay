@@ -1,0 +1,21 @@
+Q1) Use the appropriate command to list all files larger than 1 MB in the current directory and save the output to a file.
+
+Answer:
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ ls -l | awk '$5 > 1048576 {print $9}' > Q1_output
+                                                                             
+┌──(kali㉿kali)-[~/Downloads]
+└─$ ls -l                                            
+total 59940
+-rw-rw-r-- 1 kali kali 44685994 Jan 27 07:24  d2l-en.pdf
+-rw-rw-r-- 1 kali kali        0 Jan 27 07:24  file1
+-rw-rw-r-- 1 kali kali        0 Jan 27 07:25  file2
+-rw-rw-r-- 1 kali kali 16680594 Jan 27 07:23 'Ian Goodfellow, Yoshua Bengio, Aaron Courville - Deep Learning (2017, MIT).pdf'
+-rw-rw-r-- 1 kali kali       15 Jan 27 07:26  Q1_output
+                                                                             
+┌──(kali㉿kali)-[~/Downloads]
+└─$ cat Q1_output
+d2l-en.pdf
+Ian
+                                                                             
