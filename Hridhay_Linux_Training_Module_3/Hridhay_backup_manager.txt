@@ -1,0 +1,69 @@
+#!/bin/bash
+
+if [ "$#" -ne 3 ]; then
+    echo "The program needs 3 arguemnts source destination and file extension."
+    exit 1
+fi
+
+src_dir="$1"
+backup_dir="$2"
+f_ext="$3"
+
+if [ ! -d "$src_dir" ]; then
+    echo "Error: Source directory '$src_dir' does not exist."
+    exit 1
+fi
+
+if [ ! -d "$backup_dir" ]; then
+    mkdir -p "$backup_dir"
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to create backup directory '$backup_dir'."
+        exit 1
+    fi
+fi
+
+f_arr=($src_dir/*$f_ext)
+
+if [ ${#f_arr[@]} -eq 0 ]; then
+    echo "No files with extension '$f_ext' found in '$src_dir'."
+    exit 0
+fi
+
+export BACKUP_COUNT=0
+
+total_size=0
+echo "files to be backed up:"
+for file in "${f_arr[@]}"; do
+    if [ -f "$file" ]; then
+        file_size=$(stat --printf="%s" "$file")
+        echo "$(basename "$file") - $file_size bytes"
+        total_size=$((total_size + file_size))
+    fi
+done
+
+for file in "${f_arr[@]}"; do
+    if [ -f "$file" ]; then
+        d_file="$backup_dir/$(basename "$file")"
+
+        # Check if the file needs to be overwritten
+        if [ -f "$d_file" ]; then
+            if [ "$file" -nt "$d_file" ]; then
+                cp "$file" "$d_file"
+                ((BACKUP_COUNT++))
+            fi
+        else
+            cp "$file" "$d_file"
+            ((BACKUP_COUNT++))
+        fi
+    fi
+done
+
+report_file="$backup_dir/backup_report.log"
+echo "Backup Summary" > "$report_file"
+echo "----------------" >> "$report_file"
+echo "Total files processed: ${#f_arr[@]}" >> "$report_file"
+echo "Total files backed up: $BACKUP_COUNT" >> "$report_file"
+echo "Total size of files backed up: $total_size bytes" >> "$report_file"
+echo "Path to  Backup directory: $backup_dir" >> "$report_file"
+
+echo "Backup complete. report saved to '$report_file'."
