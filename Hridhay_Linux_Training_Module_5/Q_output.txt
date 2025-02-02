@@ -1,0 +1,41 @@
+┌──(kali㉿kali)-[~/Documents]
+└─$ bash que.sh -f "question.sh" -k "file"
+Key is present in file
+                                                                             
+┌──(kali㉿kali)-[~/Documents]
+└─$ bash que.sh --help                    
+Usage que.sh [options]
+Options:
+ -d <directory> : Search for files in directory recursively
+ -f <file> : Search for keyword in file
+ -k <keyword> : Search for keyword in a specific file
+ --help : Display the help menu
+                                                                             
+┌──(kali㉿kali)-[~/Documents]
+└─$ bash que.sh  -d "source" -k "help"
+source/file1.txt
+source/file2.txt
+source/file3.txt
+source/file4.txt
+                                                                             
+┌──(kali㉿kali)-[~/Documents]
+└─$ bash que.sh  -d "source" -k       
+que.sh: option requires an argument -- k
+Inavlid option 
+                                                                             
+┌──(kali㉿kali)-[~/Documents]
+└─$ bash que.sh  -d "source" -k ""    
+Key is not given
+                                                                             
+┌──(kali㉿kali)-[~/Documents]
+└─$ bash que.sh  -d               
+que.sh: option requires an argument -- d
+Inavlid option 
+                                                                             
+┌──(kali㉿kali)-[~/Documents]
+└─$ bash que.sh  -f 
+que.sh: option requires an argument -- f
+Inavlid option 
+                                                                             
+┌──(kali㉿kali)-[~/Documents]
+└─$ 
