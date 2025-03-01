@@ -1,0 +1,5 @@
+Anydesk is a software that allows a device to remotely control another device provided both devices have anydesk software installed on them.
+
+To establish a remote connection start the anydesk application both devices. Copy the address given by the anydesk client on the remote machine and paste it on the enter address bar of the anydesk software of the host device.
+
+A request will be sent to the software of the remote machine and accept the request and then the remote device can be controlled with anydesk.

@@ -1,0 +1,57 @@
+Ping
+The ping command is a network utility tool that helps in determining network connectivity issues. It tests the connectivity between 2 devices where in one device utilizes the ping command to test the network of the other device by mentioning the ip address of the other device. It sends an echo icmp data packet to the target device and waits for a response. the below command will ping www.google.com by sending 10 packets.
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ping -c 10 www.gooogle.com
+PING www.gooogle.com (142.250.195.195) 56(84) bytes of data.
+64 bytes from maa03s42-in-f3.1e100.net (142.250.195.195): icmp_seq=1 ttl=128 time=4.73 ms
+64 bytes from maa03s42-in-f3.1e100.net (142.250.195.195): icmp_seq=2 ttl=128 time=4.24 ms
+64 bytes from maa03s42-in-f3.1e100.net (142.250.195.195): icmp_seq=3 ttl=128 time=4.57 ms
+64 bytes from maa03s42-in-f3.1e100.net (142.250.195.195): icmp_seq=4 ttl=128 time=4.23 ms
+64 bytes from maa03s42-in-f3.1e100.net (142.250.195.195): icmp_seq=5 ttl=128 time=4.13 ms
+64 bytes from maa03s42-in-f3.1e100.net (142.250.195.195): icmp_seq=6 ttl=128 time=3.45 ms
+64 bytes from maa03s42-in-f3.1e100.net (142.250.195.195): icmp_seq=7 ttl=128 time=3.78 ms
+64 bytes from maa03s42-in-f3.1e100.net (142.250.195.195): icmp_seq=8 ttl=128 time=5.03 ms
+64 bytes from maa03s42-in-f3.1e100.net (142.250.195.195): icmp_seq=9 ttl=128 time=4.69 ms
+64 bytes from maa03s42-in-f3.1e100.net (142.250.195.195): icmp_seq=10 ttl=128 time=3.59 ms
+
+--- www.gooogle.com ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9021ms
+rtt min/avg/max/mdev = 3.449/4.244/5.025/0.494 ms
+                                                                                                                                                                                                                                            
+┌──(kali㉿kali)-[~/Desktop]
+└─$ 
+
+ARP
+     
+The ARP command is used to view and change the routing on a device. The protocol maps ip address to mac address of device that belong in a particular network. The below command displays the routing table. We can add and remove addresses using this tool.                                                                                                                          
+┌──(kali㉿kali)-[~/Desktop]
+└─$ arp -e           
+Address                  HWtype  HWaddress           Flags Mask            Iface
+192.168.190.2            ether   00:50:56:f1:06:20   C                     eth0
+192.168.190.254          ether   00:50:56:f0:b6:63   C                     eth0
+                                                                                                                                                            
+┌──(kali㉿kali)-[~/Desktop]
+└─$ 
+
+Ifconfig
+
+The interface used is ethernet cable. The MTU is 1500 bytes which is the maximum possible size of the packet that can be handled by the interface. txqueuelen is the length of the transmit queue. RX represents the number of packets recieved and TX represents number of packets transmitted.
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ifconfig                    
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.190.134  netmask 255.255.255.0  broadcast 192.168.190.255
+        inet6 fe80::3f64:f65f:881f:da34  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:35:d4:92  txqueuelen 1000  (Ethernet)
+        RX packets 34  bytes 4386 (4.2 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 64  bytes 7786 (7.6 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 8  bytes 480 (480.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 8  bytes 480 (480.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0

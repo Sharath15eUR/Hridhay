@@ -1,0 +1,142 @@
+Connecting 2 devices using ssh
+Host Device
+┌──(kali㉿kali)-[~/Documents]
+└─$ ssh forge@192.168.190.132                      
+forge@192.168.190.132's password: 
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 6.8.0-52-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+253 updates can be applied immediately.
+21 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+Last login: Tue Feb 25 23:01:11 2025 from 192.168.190.134
+forge@forge-VMware-Virtual-Platform:~$ ls 
+Desktop  develop  Documents  Downloads  Music  Pictures  Public  snap  source  Templates  Videos
+
+
+Remote Device
+
+forge@forge-VMware-Virtual-Platform:~/Desktop$ ifconfig
+ens33: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.190.132  netmask 255.255.255.0  broadcast 192.168.190.255
+        inet6 fe80::20c:29ff:fe67:ce71  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:67:ce:71  txqueuelen 1000  (Ethernet)
+        RX packets 245  bytes 75297 (75.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 179  bytes 34559 (34.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 307  bytes 24821 (24.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 307  bytes 24821 (24.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+forge@forge-VMware-Virtual-Platform:~/Desktop$ sudo systemctl status ssh
+[sudo] password for forge: 
+○ ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; disabled; preset: ena>
+     Active: inactive (dead)
+TriggeredBy: ● ssh.socket
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+forge@forge-VMware-Virtual-Platform:~/Desktop$ sudo systemctl start ssh
+forge@forge-VMware-Virtual-Platform:~/Desktop$ sudo ufw allow 22
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+forge@forge-VMware-Virtual-Platform:~/Desktop$ ls
+forge@forge-VMware-Virtual-Platform:~/Desktop$ ls ..
+Desktop  Documents  Music     Public  source     Videos
+develop  Downloads  Pictures  snap    Templates
+
+
+Connecting 2 devices using telnet
+Host Device 
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ telnet 192.168.190.135 23
+Trying 192.168.190.135...
+Connected to 192.168.190.135.
+Escape character is '^]'.
+
+Linux 6.11.0-17-generic (forge-VMware-Virtual-Platform) (pts/1)
+
+forge-VMware-Virtual-Platform login: forge
+Password: 
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.11.0-17-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+8 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+forge@forge-VMware-Virtual-Platform:~$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  snap  Templates  Videos
+forge@forge-VMware-Virtual-Platform:~$ ls ..
+forge  sftp_user
+forge@forge-VMware-Virtual-Platform:~$ exit
+logout
+Connection closed by foreign host.
+
+Remote Device
+ge@forge-VMware-Virtual-Platform:/home$ sudo systemctl status inetd
+● inetutils-inetd.service - GNU Network Utilities internet superserver
+     Loaded: loaded (/usr/lib/systemd/system/inetutils-inetd.service; enabled>
+     Active: active (running) since Thu 2025-02-27 16:22:05 IST; 48s ago
+       Docs: man:inetutils-inetd(8)
+             https://www.gnu.org/software/inetutils/manual/
+    Process: 8828 ExecCondition=grep -qr ^[0-9A-Za-z/] /etc/inetd.conf /etc/i>
+   Main PID: 8829 (inetutils-inetd)
+      Tasks: 1 (limit: 4551)
+     Memory: 372.0K (peak: 3.2M)
+        CPU: 126ms
+     CGroup: /system.slice/inetutils-inetd.service
+             └─8829 /usr/sbin/inetutils-inetd --foreground
+
+Feb 27 16:22:05 forge-VMware-Virtual-Platform systemd[1]: Starting inetutils->
+Feb 27 16:22:05 forge-VMware-Virtual-Platform systemd[1]: Started inetutils-i>
+Feb 27 16:22:20 forge-VMware-Virtual-Platform telnetd[8836]: connect from 192>
+Feb 27 16:22:20 forge-VMware-Virtual-Platform login[8837]: PAM unable to dlop>
+Feb 27 16:22:20 forge-VMware-Virtual-Platform login[8837]: PAM adding faulty >
+Feb 27 16:22:26 forge-VMware-Virtual-Platform login[8837]: pam_unix(login:ses>
+Feb 27 16:22:32 forge-VMware-Virtual-Platform telnetd[8836]: child process 88>
+forge@forge-VMware-Virtual-Platform:/home$ ifconfig
+ens33: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.190.135  netmask 255.255.255.0  broadcast 192.168.190.255
+        inet6 fe80::20c:29ff:fe06:3bc  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:06:03:bc  txqueuelen 1000  (Ethernet)
+        RX packets 2931  bytes 3100237 (3.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1050  bytes 89647 (89.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 201  bytes 20194 (20.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 201  bytes 20194 (20.1 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+forge@forge-VMware-Virtual-Platform:/home$ 
+
+

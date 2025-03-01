@@ -1,0 +1,7 @@
+To find the list of connected devices in the network, the following steps have to be performed.
+
+1) Type the command "ip route show ", this command will show the default gateway in the form " default via 192.168.190.1".
+2) Enter the ip address in the browser. The browser will load the login page.
+3) Enter the username and password.
+4) Select the option Attached devices.
+5) It will list the devices with their name, MAC address, IP address and connection type.

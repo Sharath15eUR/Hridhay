@@ -1,0 +1,77 @@
+When the computer has many files we can use scp command with -r option and specify the directory name which will recursively copy all the files present in the directory from the remote device to the host device securely.
+
+Host Device
+
+┌──(kali㉿kali)-[~/Documents]
+└─$ scp -r source forge@192.168.190.132:/home/forge
+forge@192.168.190.132's password: 
+file2.txt                                                                                                                       100% 7823   223.8KB/s   00:00    
+file3.txt                                                                                                                       100% 2105   104.1KB/s   00:00    
+file2.txt                                                                                                                       100% 7823   412.1KB/s   00:00    
+file3.txt                                                                                                                       100% 2105   895.6KB/s   00:00    
+file4.txt                                                                                                                       100% 2956     1.4MB/s   00:00    
+file1.txt                                                                                                                       100% 1108   345.8KB/s   00:00    
+hello.py                                                                                                                        100%    0     0.0KB/s   00:00    
+file4.txt                                                                                                                       100% 2956     1.4MB/s   00:00    
+file1.txt                                                                                                                       100% 1108   565.5KB/s   00:00    
+                                                                                                                                                                  
+┌──(kali㉿kali)-[~/Documents]
+└─$ ssh forge@192.168.190.132                      
+forge@192.168.190.132's password: 
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 6.8.0-52-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+253 updates can be applied immediately.
+21 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+Last login: Tue Feb 25 23:01:11 2025 from 192.168.190.134
+forge@forge-VMware-Virtual-Platform:~$ ls 
+Desktop  develop  Documents  Downloads  Music  Pictures  Public  snap  source  Templates  Videos
+
+
+Remote Device
+
+forge@forge-VMware-Virtual-Platform:~/Desktop$ ifconfig
+ens33: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.190.132  netmask 255.255.255.0  broadcast 192.168.190.255
+        inet6 fe80::20c:29ff:fe67:ce71  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:67:ce:71  txqueuelen 1000  (Ethernet)
+        RX packets 245  bytes 75297 (75.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 179  bytes 34559 (34.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 307  bytes 24821 (24.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 307  bytes 24821 (24.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+forge@forge-VMware-Virtual-Platform:~/Desktop$ sudo systemctl status ssh
+[sudo] password for forge: 
+○ ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; disabled; preset: ena>
+     Active: inactive (dead)
+TriggeredBy: ● ssh.socket
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+forge@forge-VMware-Virtual-Platform:~/Desktop$ sudo systemctl start ssh
+forge@forge-VMware-Virtual-Platform:~/Desktop$ sudo ufw allow 22
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+forge@forge-VMware-Virtual-Platform:~/Desktop$ ls
+forge@forge-VMware-Virtual-Platform:~/Desktop$ ls ..
+Desktop  Documents  Music     Public  source     Videos
+develop  Downloads  Pictures  snap    Templates

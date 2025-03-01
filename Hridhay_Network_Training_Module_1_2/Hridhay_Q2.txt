@@ -1,0 +1,140 @@
+Host Device that performs operations on the ftp server setup in a remote device
+┌──(kali㉿kali)-[~/Documents]
+└─$ ftp 192.168.190.132
+Connected to 192.168.190.132.
+220 (vsFTPd 3.0.5)
+Name (192.168.190.132:kali): forge
+331 Please specify the password.
+Password: 
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> ls
+229 Entering Extended Passive Mode (|||62596|)
+150 Here comes the directory listing.
+drwxr-xr-x    2 1000     1000         4096 Feb 26 01:10 Desktop
+drwxr-xr-x    2 1000     1000         4096 Jan 27 14:57 Documents
+drwxr-xr-x    2 1000     1000         4096 Jan 27 15:24 Downloads
+drwxr-xr-x    2 1000     1000         4096 Jan 27 14:57 Music
+drwxr-xr-x    2 1000     1000         4096 Jan 27 14:57 Pictures
+drwxr-xr-x    2 1000     1000         4096 Jan 27 14:57 Public
+drwxr-xr-x    2 1000     1000         4096 Jan 27 14:57 Templates
+drwxr-xr-x    2 1000     1000         4096 Jan 27 14:57 Videos
+drwxrwxr-x    3 1000     1000         4096 Feb 13 23:35 develop
+drwx------    6 1000     1000         4096 Jan 27 15:06 snap
+drwxrwxr-x    3 1000     1000         4096 Feb 25 23:04 source
+226 Directory send OK.
+ftp> cd ./source
+250 Directory successfully changed.
+ftp> ls
+229 Entering Extended Passive Mode (|||14556|)
+150 Here comes the directory listing.
+drwxrwxr-x    2 1000     1000         4096 Feb 25 23:04 dest
+-rw-rw-r--    1 1000     1000         1108 Feb 26 01:09 file1.txt
+-rw-rw-r--    1 1000     1000         7823 Feb 25 23:04 file2.txt
+-rw-rw-r--    1 1000     1000         2105 Feb 25 23:04 file3.txt
+-rw-rw-r--    1 1000     1000         2956 Feb 25 23:04 file4.txt
+-rw-rw-r--    1 1000     1000            0 Feb 25 23:04 hello.py
+226 Directory send OK.
+ftp> get hello.py
+local: hello.py remote: hello.py
+229 Entering Extended Passive Mode (|||53865|)
+150 Opening BINARY mode data connection for hello.py (0 bytes).
+     0        0.00 KiB/s 
+226 Transfer complete.
+ftp> put bup.sh
+local: bup.sh remote: bup.sh
+229 Entering Extended Passive Mode (|||60849|)
+150 Ok to send data.
+100% |*********************************************************************************************************************|   466       36.55 KiB/s    00:00 ETA
+226 Transfer complete.
+466 bytes sent in 00:00 (32.86 KiB/s)
+ftp> ls
+229 Entering Extended Passive Mode (|||22921|)
+150 Here comes the directory listing.
+-rw-------    1 1000     1000          466 Feb 26 01:11 bup.sh
+drwxrwxr-x    2 1000     1000         4096 Feb 25 23:04 dest
+-rw-rw-r--    1 1000     1000         1108 Feb 26 01:09 file1.txt
+-rw-rw-r--    1 1000     1000         7823 Feb 25 23:04 file2.txt
+-rw-rw-r--    1 1000     1000         2105 Feb 25 23:04 file3.txt
+-rw-rw-r--    1 1000     1000         2956 Feb 25 23:04 file4.txt
+-rw-rw-r--    1 1000     1000            0 Feb 25 23:04 hello.py
+226 Directory send OK.
+ftp> exit
+221 Goodbye.
+                                                                                                                                                                  
+┌──(kali㉿kali)-[~/Documents]
+└─$ ls | grep hello                 
+hellonn
+hello.py
+hello.txt
+                                                                                                                                                                  
+┌──(kali㉿kali)-[~/Documents]
+└─$ 
+
+Remote Device that hosts the FTP Server and SFTP Server
+
+forge@forge-VMware-Virtual-Platform:~/Desktop$ sudo systemctl status vsftpd
+● vsftpd.service - vsftpd FTP server
+     Loaded: loaded (/usr/lib/systemd/system/vsftpd.service; enabled; preset: e>
+     Active: active (running) since Wed 2025-02-26 01:08:23 IST; 1min 27s ago
+    Process: 5028 ExecStartPre=/bin/mkdir -p /var/run/vsftpd/empty (code=exited>
+   Main PID: 5030 (vsftpd)
+      Tasks: 1 (limit: 4558)
+     Memory: 720.0K (peak: 2.2M)
+        CPU: 119ms
+     CGroup: /system.slice/vsftpd.service
+             └─5030 /usr/sbin/vsftpd /etc/vsftpd.conf
+
+Feb 26 01:08:23 forge-VMware-Virtual-Platform systemd[1]: Starting vsftpd.servi>
+Feb 26 01:08:23 forge-VMware-Virtual-Platform systemd[1]: Started vsftpd.servic>
+forge@forge-VMware-Virtual-Platform:~/Desktop$ ifconfig
+ens33: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.190.132  netmask 255.255.255.0  broadcast 192.168.190.255
+        inet6 fe80::20c:29ff:fe67:ce71  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:67:ce:71  txqueuelen 1000  (Ethernet)
+        RX packets 6836  bytes 2426835 (2.4 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 4738  bytes 512637 (512.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 640  bytes 60018 (60.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 640  bytes 60018 (60.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+SFTP
+
+Host device performing get and put operations on an SFTP server.
+                                                                                                                                                                  
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ls
+hello.txt
+                                                                                                                                                                  
+┌──(kali㉿kali)-[~/Desktop]
+└─$ sftp sftp_user@192.168.190.135
+The authenticity of host '192.168.190.135 (192.168.190.135)' can't be established.
+ED25519 key fingerprint is SHA256:BVxzbPza6VdmKrG7oXMRvrgRXWyZIBSodhoxM6FIYZA.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.190.135' (ED25519) to the list of known hosts.
+sftp_user@192.168.190.135's password: 
+Connected to 192.168.190.135.
+sftp> ls
+forge      sftp_user  
+sftp> cd sftp_user
+sftp> put hello.txt
+Uploading hello.txt to /sftp_user/hello.txt
+hello.txt                                                                                                                       100%    0     0.0KB/s   00:00    
+sftp> get hello.txt
+Fetching /sftp_user/hello.txt to hello.txt
+sftp> ls
+hello.txt  snap       
+sftp> exit
+
+

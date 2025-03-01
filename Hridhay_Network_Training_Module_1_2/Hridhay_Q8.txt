@@ -1,0 +1,29 @@
+The interface used is ethernet cable. The MTU is 1500 bytes which is the maximum possible size of the packet that can be handled by the interface. txqueuelen is the length of the transmit queue. RX represents the number of packets recieved and TX represents number of packets transmitted.
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ifconfig       
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.190.134  netmask 255.255.255.0  broadcast 192.168.190.255
+        inet6 fe80::3f64:f65f:881f:da34  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:35:d4:92  txqueuelen 1000  (Ethernet)
+        RX packets 34  bytes 4386 (4.2 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 64  bytes 7786 (7.6 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 8  bytes 480 (480.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 8  bytes 480 (480.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+There is no wireless interface.                                                                                                                                                           
+┌──(kali㉿kali)-[~/Desktop]
+└─$ iwconfig       
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+     
