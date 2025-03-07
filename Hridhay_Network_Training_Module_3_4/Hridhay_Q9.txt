@@ -1,0 +1,7 @@
+To configure a LAN using ip command in Linux devices the following steps will be taken.
+1) Listing all available interfaces using the command "ip show link".
+2) Assigning static ip addresses to all the devices in an interface say eth0 using the command "sudo ip addr add 192.168.1.10/24 dev eth0"
+3) Enable the interface using the command "sudo ip link set eth0 up"
+4) Set the default gateway using the command "sudo ip route add default via 192.168.1.1"
+5) Verify the connection using the commands "ip addr show eth0" and "ip route show"
+

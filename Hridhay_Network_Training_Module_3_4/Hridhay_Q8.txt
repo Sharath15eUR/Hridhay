@@ -1,0 +1,9 @@
+ 
+In the Linux kernel each ethernet device is represented as a network-device interface. Each ethernet device is represented as a network interface eth0 using the net_device structure.This structure contains essential information such as the interface name, MAC address, and interface state (up or down). When a network interface is initialized, the Address Resolution Protocol (ARP) helps map IP addresses to hardware MAC addresses, enabling devices to locate one another on the same local network. The Linux kernel maintains an ARP cache to store recently resolved addresses, which optimizes communication efficiency.
+
+During data transmission socket buffers are used to representand manage packets in the Linux kernel.A socket buffer consists of two parts (shown in Figure 4-1):
+1) Packet data: This storage location stores data actually transmitted over a network. In theterminology introduced in Section 3.2.1, this storage location corresponds to the protocol data unit.
+2) Management data (struct sk_buff): While a packet is being processed in the Linux kernel, the kernel requires additional data that are not necessarily stored in the actual packet.
+These mainly implementation-specific data (pointers, timers, etc.). They form part of the interface control information (ICI) exchanged between protocol instances, in addition to the
+parameters passed in function calls.
+ When an application sends data, the kernel packages the data into frames, attaches the destination MAC address, and forwards it to the appropriate device driver. The driver then communicates with the hardware to transmit the frame over the physical network. On the receiving side, incoming frames are processed by the network driver, which notifies the kernel and passes the data to higher-layer protocols like TCP/IP.
