@@ -1,0 +1,121 @@
+                                                                             
+┌──(kali㉿kali)-[~/Desktop]
+└─$ traceroute www.google.com
+traceroute to www.google.com (172.217.31.196), 30 hops max, 60 byte packets
+ 1  192.168.10.1 (192.168.10.1)  8.306 ms  7.125 ms  7.132 ms
+ 2  * * *
+ 3  172.16.138.206 (172.16.138.206)  3.383 ms * *
+ 4  * * *
+ 5  * * *
+ 6  * * *
+ 7  72.14.218.250 (72.14.218.250)  5.006 ms *  4.786 ms
+ 8  * * *
+ 9  * 142.251.60.184 (142.251.60.184)  3.471 ms *
+10  172.253.71.132 (172.253.71.132)  3.899 ms 172.253.70.166 (172.253.70.166)  4.379 ms 142.251.230.52 (142.251.230.52)  3.812 ms
+11  * 142.251.51.119 (142.251.51.119)  2.575 ms *
+12  * * maa03s28-in-f4.1e100.net (172.217.31.196)  3.322 ms
+                                                                             
+┌──(kali㉿kali)-[~/Desktop]
+└─$ traceroute www.cisco.com 
+traceroute to www.cisco.com (23.209.254.61), 30 hops max, 60 byte packets
+ 1  192.168.10.1 (192.168.10.1)  6.659 ms  6.340 ms  1.428 ms
+ 2  100.92.0.1 (100.92.0.1)  2.766 ms * *
+ 3  172.16.138.206 (172.16.138.206)  3.768 ms *  3.882 ms
+ 4  * * *
+ 5  * * *
+ 6  * * *
+ 7  * * *
+ 8  * * *
+ 9  * * *
+10  * * *
+11  * * *
+12  * * *
+13  * * *
+14  * * *
+15  * * *
+16  * * *
+17  * * *
+18  * * *
+19  * * *
+20  * * *
+21  * * *
+22  * * *
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *
+                                                                                                                              
+┌──(kali㉿kali)-[~/Desktop]
+└─$ traceroute -I www.google.com
+You do not have enough privileges to use this traceroute method.
+socket: Operation not permitted
+                                                                                                
+┌──(kali㉿kali)-[~/Desktop]
+└─$ sudo traceroute -I www.google.com
+[sudo] password for kali: 
+traceroute to www.google.com (142.250.182.36), 30 hops max, 60 byte packets
+ 1  192.168.10.1 (192.168.10.1)  1.136 ms  1.053 ms  1.669 ms
+ 2  100.92.0.1 (100.92.0.1)  2.374 ms * *
+ 3  172.16.138.206 (172.16.138.206)  3.271 ms * *
+ 4  * * *
+ 5  * * *
+ 6  * 10.179.57.222 (10.179.57.222)  2.232 ms *
+ 7  173.194.125.26 (173.194.125.26)  4.244 ms * *
+ 8  142.251.227.213 (142.251.227.213)  3.915 ms * *
+ 9  * * *
+10  maa05s19-in-f4.1e100.net (142.250.182.36)  3.239 ms * *
+                                                                                                
+┌──(kali㉿kali)-[~/Desktop]
+└─$ sudo traceroute -I www.cisco.com 
+traceroute to www.cisco.com (23.209.254.61), 30 hops max, 60 byte packets
+ 1  192.168.10.1 (192.168.10.1)  1.215 ms  1.106 ms  1.753 ms
+ 2  100.92.0.1 (100.92.0.1)  2.307 ms * *
+ 3  172.16.138.206 (172.16.138.206)  2.780 ms * *
+ 4  * * *
+ 5  * * *
+ 6  * * *
+ 7  * * *
+ 8  * * *
+ 9  * * *
+10  * * *
+11  * * *
+12  * * *
+13  a23-209-254-61.deploy.static.akamaitechnologies.com (23.209.254.61)  47.239 ms  48.309 ms *
+                                                                                                
+┌──(kali㉿kali)-[~/Desktop]
+└─$ sudo traceroute -T www.google.com
+traceroute to www.google.com (142.250.182.36), 30 hops max, 60 byte packets
+ 1  192.168.10.1 (192.168.10.1)  1.848 ms  4.969 ms  4.931 ms
+ 2  100.92.0.1 (100.92.0.1)  2.653 ms * *
+ 3  * 172.16.138.206 (172.16.138.206)  2.956 ms *
+ 4  * * *
+ 5  * * *
+ 6  * * *
+ 7  173.194.125.26 (173.194.125.26)  3.855 ms * *
+ 8  142.251.227.213 (142.251.227.213)  3.817 ms *  3.575 ms
+ 9  142.251.55.239 (142.251.55.239)  4.156 ms *  4.015 ms
+10  maa05s19-in-f4.1e100.net (142.250.182.36)  3.662 ms * *
+                                                                                                
+┌──(kali㉿kali)-[~/Desktop]
+└─$ sudo traceroute -T www.cisco.com
+traceroute to www.cisco.com (23.209.254.61), 30 hops max, 60 byte packets
+ 1  192.168.10.1 (192.168.10.1)  1.357 ms  2.068 ms *
+ 2  100.92.0.1 (100.92.0.1)  2.232 ms * *
+ 3  172.16.138.206 (172.16.138.206)  6.686 ms * *
+ 4  * * *
+ 5  * * *
+ 6  * * *
+ 7  * * *
+ 8  * * *
+ 9  * * *
+10  * * *
+11  * * *
+12  * * *
+13  a23-209-254-61.deploy.static.akamaitechnologies.com (23.209.254.61)  7.404 ms  7.066 ms *
+                                                                                                
+┌──(kali㉿kali)-[~/Desktop]
+└─$ 

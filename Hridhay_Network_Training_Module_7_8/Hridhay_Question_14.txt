@@ -1,0 +1,44 @@
+                                                                             
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.245.128  netmask 255.255.255.0  broadcast 192.168.245.255
+        inet6 fe80::528e:e434:734:e895  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:d7:9c:6f  txqueuelen 1000  (Ethernet)
+        RX packets 1940885  bytes 2854107247 (2.6 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 111720  bytes 40806039 (38.9 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 8  bytes 480 (480.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 8  bytes 480 (480.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+                                                                             
+┌──(kali㉿kali)-[~/Desktop]
+└─$ iperf -c 192.168.145.1 -p 5201
+------------------------------------------------------------
+Client connecting to 192.168.145.1, TCP port 5201
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  1] local 192.168.245.128 port 41268 connected with 192.168.145.1 port 5201
+[  1] tcp write failed
+[  1] shutdown failed: Transport endpoint is not connected
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-0.8860 sec  32.7 MBytes   309 Mbits/sec
+
+
+PS D:\Downloads\iperf3.1.1_32> .\iperf3 -s
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+iperf3: error - unable to receive parameters from client:
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+iperf3: interrupt - the server has terminated

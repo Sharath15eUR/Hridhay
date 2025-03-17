@@ -1,0 +1,58 @@
+
+C:\Users\hridh>nslookup www.google.com 8.8.8.8
+Server:  dns.google
+Address:  8.8.8.8
+
+Non-authoritative answer:
+Name:    www.google.com
+Addresses:  2404:6800:4007:824::2004
+          172.217.31.196
+
+
+C:\Users\hridh>nslookup www.facebook.com 8.8.8.8
+Server:  dns.google
+Address:  8.8.8.8
+
+Non-authoritative answer:
+DNS request timed out.
+    timeout was 2 seconds.
+Name:    star-mini.c10r.facebook.com
+Address:  57.144.124.1
+Aliases:  www.facebook.com
+
+
+C:\Users\hridh>nslookup www.amazon.com 8.8.8.8
+Server:  dns.google
+Address:  8.8.8.8
+
+Non-authoritative answer:
+Name:    d3ag4hukkh62yn.cloudfront.net
+Addresses:  2600:9000:2241:9e00:7:49a5:5fd4:b121
+          2600:9000:2241:800:7:49a5:5fd4:b121
+          2600:9000:2241:2000:7:49a5:5fd4:b121
+          2600:9000:2241:7000:7:49a5:5fd4:b121
+          2600:9000:2241:c000:7:49a5:5fd4:b121
+          2600:9000:2241:4a00:7:49a5:5fd4:b121
+          2600:9000:2241:1600:7:49a5:5fd4:b121
+          2600:9000:2241:d400:7:49a5:5fd4:b121
+          18.67.156.60
+Aliases:  www.amazon.com
+          tp.47cf2c8c9-frontier.amazon.com
+
+
+C:\Users\hridh>nslookup www.cisco.com 8.8.8.8
+Server:  dns.google
+Address:  8.8.8.8
+
+Non-authoritative answer:
+Name:    e2867.dsca.akamaiedge.net
+Addresses:  2600:140f:3:f95::b33
+          2600:140f:3:f93::b33
+          23.209.254.61
+Aliases:  www.cisco.com
+          www.cisco.com.akadns.net
+          wwwds.cisco.com.edgekey.net
+          wwwds.cisco.com.edgekey.net.globalredir.akadns.net
+
+
+C:\Users\hridh>
