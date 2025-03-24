@@ -1,0 +1,7 @@
+Infrastructure Mode
+In this mode devices connect through a central access point (AP), ensuring reliable connectivity in homes, offices, and enterprise networks. This setup allows multiple devices to communicate efficiently while accessing the internet or a local network.  
+
+IBSS, or Ad Hoc Mode
+In the 802.11 standard, Independent Basic Service Set (IBSS) is defined as two devices connected wirelessly in a peer-to-peer (P2P) manner without the use of an AP. One device takes the role of advertising the wireless network to clients. The IBSS allows two devices to communicate directly without the need for any other wireless devices, as shown in Figure 22-5. IBSSs do not scale well beyond 8 to 10 devices. It is useful for temporary file sharing between laptops, small gaming setups, or emergency communication where no infrastructure is available.
+
+Mesh Networks provide seamless Wi-Fi coverage by interconnecting multiple access points. This topology is highly effective in large areas such as smart cities, university campuses, or multi-story buildings, as it ensures continuous connectivity even if one node fails, thanks to self-healing properties.

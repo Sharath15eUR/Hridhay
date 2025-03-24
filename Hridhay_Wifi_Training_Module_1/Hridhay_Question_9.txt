@@ -1,0 +1,13 @@
+Backhaul is defined as the set of copper, fiber, or wireless links that connect the core (or backbone) networks with the smaller subnetworks towards the edge before users can access the internet by accessing the subnetwork. 
+
+The following are types of wifi backhaul connectivity:
+
+Fiber-Optic Backhaul
+DSL (Digital Subscriber Line) Backhaul
+Cable Broadband Backhaul
+Satellite Backhaul
+Microwave Backhaul
+Cellular (4G/5G) Backhaul
+Wireless Mesh Backhaul
+
+House Backhaul is a Cable backhaul

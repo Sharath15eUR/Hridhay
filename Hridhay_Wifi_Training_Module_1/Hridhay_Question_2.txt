@@ -1,0 +1,17 @@
+A wifi-device that is used daily is a Wifi-router. It is a dual band router and follows 802.11ac Wireless Communication Standard.
+PS C:\Users\hridh> netsh wlan show drivers
+
+Interface name: Wi-Fi
+
+    Driver                    : Intel(R) Wireless-AC 9462
+    Vendor                    : Intel Corporation
+    Provider                  : Intel
+    Date                      : 09-03-2023
+    Version                   : 22.200.2.1
+    INF file                  : oem48.inf
+    Type                      : Native Wi-Fi Driver
+    Radio types supported     : 802.11b 802.11g 802.11n 802.11a 802.11ac
+    FIPS 140-2 mode supported : Yes
+    802.11w Management Frame Protection supported : Yes
+
+The device supports till WIFI Generation 5.

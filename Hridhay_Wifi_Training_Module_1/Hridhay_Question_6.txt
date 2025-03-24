@@ -1,0 +1,16 @@
+IEEE 802.11a
+Frequency: 5 GHz
+Data Rate: Up to 54 Mbps
+Range: Shorter range compared to 802.11b due to higher frequency
+Interference: Less prone to interference from other devices operating on 2.4 GHz
+Signal Penetration: Signals have more difficulty penetrating walls and other obstructions 
+
+
+IEEE 802.11b
+Frequency: 2.4 GHz
+Data Rate: Up to 11 Mbps
+Range: Longer range compared to 802.11a due to lower frequency
+Interference: More prone to interference from other devices operating on 2.4 GHz
+Signal Penetration: Signals can penetrate walls and other obstructions more easily 
+
+APs of both 802.11 and 802.11b are not compatible with each other. This can be overcome with dual-mode APs or using 802.11g that offers 802.11a speeds and backward compatibility with 802.11b.

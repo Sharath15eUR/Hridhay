@@ -1,0 +1,19 @@
+2.4GHz
+Protocol: Wi-Fi 4 (802.11n)  
+Security type: WPA2-Personal  
+Manufacturer: Intel Corporation  
+Description: Intel(R) Wireless-AC 9462  
+Driver version: 22.200.2.1  
+Network band: 2.4 GHz  
+Network channel: 6  
+Link speed (Receive/Transmit): 121/150 (Mbps)  
+
+5GHz
+Protocol: Wi-Fi 5 (802.11ac)  
+Security type: WPA2-Personal  
+Manufacturer: Intel Corporation  
+Description: Intel(R) Wireless-AC 9462  
+Driver version: 22.200.2.1  
+Network band: 5 GHz  
+Network channel: 36  
+Link speed (Receive/Transmit): 135/150 (Mbps) 

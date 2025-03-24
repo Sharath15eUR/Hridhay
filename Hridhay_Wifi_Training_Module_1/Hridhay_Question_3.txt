@@ -1,0 +1,10 @@
+Basic Service Set(BSS) is a network topology that allows all wireless devices to communicate with each other through a common access point.
+Any wireless device or station that wants to send an association request to the access point it has to match the following requirements.
+
+1) Matching SSID (Service Set Identifier). It is the MAC address of the AP associated with the BSS.  
+2) Compatible wireless data rate i.e., transmission speed or speed at which data is transferred between stations. 
+3) Authentication credentials i.e., verification of the client’s identity. 
+
+BSS provides short-range wireless communication and such an area is known as BSA (Basic Service Area). 
+
+Extended Service Set (ESS) is a set of interconnected wireless access points and stations that group together to form a single logical network. Extended service sets allow devices to roam seamlessly between access points without losing their network connection. It connects multiple BSS together, as a result when a device moves out of range of one AP, it is automatically connected to another AP. Each ESS is uniquely identified by a unique SSID.
