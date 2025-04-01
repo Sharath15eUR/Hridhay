@@ -1,0 +1,4 @@
+In Sniffer mode the Network Interface Cards are able to capture all packets in a wired or a wireless network it is connected, instead of usually capturing packets addressed to it. It can be used for packet analysis, network troubleshooting, and security monitoring.
+
+In Monitor mode the Network Interface Cards are able to capture all wireless traffic in range, regardless of the network it's connected to. It is used for Wi-Fi penetration testing, packet injection, and passive eavesdropping.
+

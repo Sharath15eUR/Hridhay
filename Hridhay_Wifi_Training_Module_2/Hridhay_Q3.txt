@@ -1,0 +1,6 @@
+CAPWAP operates in Layer 3 of the OSI model that is the network layer, since it allows communication between AP's and WLC over IP networks.
+
+There are two tunnel types:
+1)CAPWAP control messages: contain information about WLAN management. We use this to configure and manage the AP. These control messages are encrypted.
+2)CAPWAP data messages: encapsulate packets to and from wireless clients who are associated with the AP. These messages are unencrypted by default
+Each uses a different UDP port.Tunneled traffic can be switched or routed. Using a tunnel means the lightweight APs and WLC don’t have to be in the same VLAN. This is useful since APs are typically on the access layer, and the WLC is in a central location (core layer or data center attached to the core).Because of the CAPWAP tunnel, the AP and WLC are not only physically separated but also logically separated.

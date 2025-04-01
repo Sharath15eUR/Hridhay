@@ -1,0 +1,9 @@
+The CAPWAP tunnel is created in the following way:
+
+1)The Access Point (AP) begins by searching for available Wireless LAN Controllers (WLCs) on the network. This discovery can occur through multiple methods, including broadcast messages, DHCP options, DNS resolution, or manual static configuration.
+2)After identifying a WLC, the AP initiates the joining process by sending a request to establish a connection using the CAPWAP (Control and Provisioning of Wireless Access Points) protocol.
+3)Upon receiving the join request, the WLC evaluates it and, if approved, responds with a CAPWAP join acknowledgment. Following this, both the AP and the WLC negotiate and create a CAPWAP data plane, which serves as the tunnel for forwarding user traffic between them.
+4)Once the data plane is in place, a control plane connection is established. This connection facilitates the exchange of control and management messages between the AP and the WLC.
+5)The integration of both the data plane and control plane forms the complete CAPWAP tunnel. This tunnel enables configuration management, monitoring, and overall AP control by the WLC.
+6)The CAPWAP tunnel remains active throughout the AP's operation. It is maintained through periodic keep-alive messages and has mechanisms in place to recover from failures or disruptions.
+7)With the CAPWAP tunnel successfully established and maintained, the AP can transmit user data to the WLC over the data plane. The WLC oversees the connected APs, ensuring efficient coordination and network management.

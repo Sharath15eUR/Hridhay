@@ -1,0 +1,10 @@
+In autonomous AP architecture, all autonomous AP's work alone and each if them have to be configured one by one. This architecture leads to some drawbacks.
+
+1) To achieve roaming, we need to configure VLAN's and SSID's of all AP's.
+2) For each new SSID, a new VLAN has to be added in each switch.
+3) RF parameters need to be configured manually.
+4) There is no central point in the network to do things with our wireless traffic like policing, QoS, or intrusion detection.
+
+To overcome these problems we introduce SPLITMAC architecture, where some functions that are not delay-sensitive is given the Wireless LAN Controller whereas the remaining functions which are needed to be done in real-time are given to the AP. The capabilities of the AP are taken away and given to the WLC, these AP's are lightweight AP's and are use instead of standard AP's. When a lightweight AP boots, it uses discovery mechanisms to search and connect to a WLC. Before the AP and WLC connect, they have to authenticate each other. We do this with pre-installed X.509 certificates on the AP and WLC. This prevents someone from adding an unauthorized AP to your network. 
+
+It improves the AP's performance as the AP's does not have to do complex tasks which are done by the WLC. More AP's can be added easily as a result the AP's will have a lower load as compared to AP's in other architectures. This results in efficient performance by AP's in SPLITMAC.

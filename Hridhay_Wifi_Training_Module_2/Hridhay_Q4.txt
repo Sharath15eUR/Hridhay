@@ -1,0 +1,3 @@
+In cloud based AP's the management functions of the AP's is pushed into the Internet cloud. A Platform in the Cloud is responsible for performing these management functions.
+
+In Lightweight AP's each LAP is automatically configured and managed by the WLC. The WLC is responsible for performing management functions. They are lightweight because they only perform the 802.11 wireless operation for wireless clients.

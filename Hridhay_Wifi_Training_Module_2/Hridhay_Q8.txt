@@ -1,0 +1,5 @@
+In the above scenario following are the challenges that will be faced
+1) To achieve seamless roaming SSIDs and VLANs on all 50 AP's have to be configured which is a time consuming task.
+2) Each AP has to be configured and administered manually which leads to a huge administrative workload.
+3) Manual RF management is needed to tackle frequency and channel interference due to the presence of many APs.
+4) Difficult to enforce security due to absence of centralized security enforcement,making it difficult to apply consistent WPA2/3, VLAN, ACLs, or firewall rules across all APs.
