@@ -1,0 +1,4 @@
+In 802.11a/g, the PPDU includes a preamble, SIGNAL field, and data field. This format is simple and designed for legacy devices using OFDM.
+In 802.11n (HT – High Throughput), the PPDU types are HT-mixed and HT-greenfield. HT-mixed ensures backward compatibility, while HT-greenfield optimizes throughput but lacks support for legacy devices.
+In 802.11ac (VHT – Very High Throughput), the PPDU includes VHT-SIG fields and supports wider channels (up to 160 MHz), more spatial streams, and higher data rates. It is not backward compatible with non-802.11ac devices.
+In 802.11ax (HE – High Efficiency), the PPDU types are HE SU (Single User), HE MU (Multi-User), HE TB (Trigger-Based), and HE ER SU (Extended Range). These formats support OFDMA, longer range, and higher efficiency in dense environments.

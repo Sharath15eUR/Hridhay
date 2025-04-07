@@ -1,0 +1,24 @@
+A modulation scheme is defined as the method used to convert information bits into physical symbols in communication systems. It can be adapted to the channel conditions to balance communication rate and reliability, with denser constellations leading to higher rates but less reliable transmission.
+
+The different types in various standards are as follows:
+
+BPSK:
+Binary Phase Shift Keying (BPSK) is the simplest modulation technique, transmitting one bit per symbol by shifting the carrier signal’s phase between two values. It is highly noise-resistant and reliable but offers the lowest data rate, making it suitable for basic, long-range wireless communication like early Wi-Fi (802.11b).
+
+QPSK:
+Quadrature Phase Shift Keying (QPSK) uses four distinct phase shifts to transmit two bits per symbol. It effectively doubles the data rate compared to BPSK while still maintaining good noise resistance. QPSK is widely used in wireless standards like 802.11a/g/n, offering a solid balance of speed and stability in moderate environments.
+
+16-QAM:
+16-QAM combines amplitude and phase modulation, using 16 unique signal combinations to transmit 4 bits per symbol. It provides higher data rates than QPSK but requires better signal quality. This modulation is commonly used in Wi-Fi standards such as 802.11a/g/n to enhance data throughput in moderately clean environments.
+
+64-QAM:
+64-QAM transmits 6 bits per symbol by using 64 combinations of amplitude and phase changes. It enables high-speed wireless data transmission but needs a strong, low-noise signal to function effectively. 64-QAM is a key part of modern Wi-Fi standards like 802.11n and 802.11ac for fast internet access.
+
+256-QAM:
+256-QAM encodes 8 bits per symbol using 256 signal combinations, providing excellent data rates. However, it’s highly sensitive to interference and requires excellent signal strength. This scheme was introduced in Wi-Fi 5 (802.11ac) to support gigabit-level speeds for activities such as HD streaming and large file transfers.
+
+1024-QAM:
+1024-QAM uses 1024 combinations to transmit 10 bits per symbol, offering significant improvements in speed and efficiency. It requires very clean transmission environments to work reliably. This modulation was introduced with Wi-Fi 6 (802.11ax), particularly useful in dense areas like offices, schools, and public spaces with many connected devices.
+
+4096-QAM:
+4096-QAM supports ultra-high-speed communication by transmitting 12 bits per symbol with 4096 distinct signals. It delivers massive throughput but demands excellent signal quality and minimal interference. Featured in Wi-Fi 7 (802.11be), it is designed for future applications such as 8K streaming, AR/VR, and ultra-fast, low-latency wireless networking.

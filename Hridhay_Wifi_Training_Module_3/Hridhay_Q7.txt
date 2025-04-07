@@ -1,0 +1,26 @@
+The 802.11 Physical Layer uses bursted transmissions or packets. Each packet contains a Preamble, Header and Payload Data. The Preamble allows the receiver to obtain time and frequency synchronization and estimate channel characteristics for equalization. It is a bit sequence that receivers watch for to lock onto the rest of the transmission. The Header provides information about the packet configuration, such as format, data rates, etc. Finally the Payload Data contains the user’s payload data being transported.
+
+The 802.11 standards define "frame" types for use in transmission of data as well as management and control of wireless links. At the top level these frames are divided into three functions: Management Frames, Control Frames and Data Frames. Each frame consists of an MAC header, payload and frame check sequence (FCS). Some frames may not have a payload. The first two bytes of the MAC header form a frame control field specifying the form and function of the frame. The main fields of a frame in WLANs as laid down by IEEE 802.11 are as follows
+
+Frame Control −It is a 2 bytes starting field composed of 11 subfields. It contains control information of the frame. The 11 subfields are −
+
+Protocol version − The first sub-field is a two – bit field set to 00. It has been included to allow future versions of IEE 802.11 to operate simultaneously.
+
+Type − It is a two-bit subfield that specifies whether the frame is a data frame, control frame or a management frame.
+
+Subtype − it is a four – bit subfield states whether the field is a Request to Send (RTS) or a Clear to Send (CTS) control frame. For a regular data frame, the value is set to 0000.
+
+To DS − A single bit subfield indicating whether the frame is going to the access point (AC), which coordinates the communications in centralised wireless systems.
+
+1)From DS − A single bit subfield indicating whether the frame is coming from the AC.
+2)More Fragments − A single bit subfield which when set to 1 indicates that more fragments would follow.
+3)Retry − A single bit subfield which when set to 1 specifies a retransmission of a previous frame.
+4)Power Management − A single bit subfield indicating that the sender is adopting power-save mode.
+5)More Data − A single bit subfield showing that sender has further data frames for the receiver.
+6)Protected Frame − A single bit subfield indicating that this is an encrypted frame.
+8)Order − The last subfield, of one – bit, informs the receiver that to the higher layers the frames should be in an ordered sequence.
+9)Duration − It is a 2-byte field that specifies the time period for which the frame and its acknowledgement occupy the channel.
+10)Address fields: There are three 6-byte address fields containing addresses of source, immediate destination and final endpoint respectively.
+11)Sequence − It a 2 bytes field that stores the frame numbers. It detects duplicate frames and determines the order of frames for higher layers. Among the 16 bits, the first 4 bits provides identification to the fragment and the rest 12 bits contain the sequence number that increments with each transmission.
+12)Data − This is a variable sized field that carries the payload from the upper layers. The maximum size of data field is 2312 bytes.
+13)Frame Check Sequence (FCS) − It is a 4-byte field containing error detection information.

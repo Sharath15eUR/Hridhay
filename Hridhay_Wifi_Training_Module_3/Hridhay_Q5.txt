@@ -1,0 +1,8 @@
+2.4GHZ BAND:
+This band spans from 2.4 to 2.4835 GHz and offers up to 14 channels, although most countries use only channels 1 to 11. This band provides a longer range and better wall penetration but is prone to interference from other household devices like microwaves and Bluetooth equipment. Due to the limited number of non-overlapping channels—only three (channels 1, 6, and 11)—this band often suffers from congestion in dense environments.
+
+5GHZ BAND:
+This band ranging from 5.15 to 5.875 GHz, offers many more non-overlapping channels—typically around 25 depending on local regulations. It supports wider channel bandwidths such as 20 MHz, 40 MHz, 80 MHz, and 160 MHz, which enables faster data transfer. However, the higher frequency means it has a shorter range and less penetration through walls. Some 5 GHz channels also use Dynamic Frequency Selection (DFS) to avoid interference with radar systems.
+
+6GHZ BAND:
+This band is the newest addition, ranging from 5.925 to 7.125 GHz, and is used by Wi-Fi 6E and Wi-Fi 7 devices. It provides a large number of interference-free channels, supports channel widths up to 320 MHz, and is ideal for high-bandwidth applications like 8K streaming and virtual reality. However, it requires newer devices that support this band and has an even shorter range compared to 5 GHz due to the higher frequency.

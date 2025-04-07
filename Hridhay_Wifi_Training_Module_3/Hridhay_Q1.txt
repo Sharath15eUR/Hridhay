@@ -1,0 +1,23 @@
+802.11:
+This was the first IEEE wireless LAN standard, operating in the 2.4 GHz band. It supports data rates up to 2 Mbps using either Frequency Hopping Spread Spectrum (FHSS) or Direct Sequence Spread Spectrum (DSSS) modulation techniques.
+
+802.11a:
+It operates in the 5 GHz band, 802.11a introduced Orthogonal Frequency Division Multiplexing (OFDM), which allowed it to reach speeds of up to 54 Mbps. Due to the higher frequency, it offered less interference but had a shorter range compared to 2.4 GHz standards. 
+
+802.11b:
+802.11b works in the 2.4 GHz band and used DSSS modulation, providing data rates up to 11 Mbps. It is widely popular due to its affordability and decent range. However, the 2.4 GHz band is prone to interference from devices like microwaves and Bluetooth, which impacts its performance.
+
+802.11g:
+This standard combines the best of both 802.11a and 802.11b. It operates at 2.4 GHz like 802.11b but uses OFDM modulation like 802.11a, allowing speeds up to 54 Mbps. It is backward compatible with 802.11b, making it a popular upgrade path without requiring all-new hardware.
+
+802.11n:
+802.11n utilizes Multiple Input Multiple Output (MIMO) technology. It operates on both 2.4 GHz and 5 GHz bands and used channel bonding (20/40 MHz) to support data rates up to 600 Mbps. This significantly improved range, speed, and reliability.
+
+802.11ac:
+It operates exclusively in the 5 GHz band, 802.11ac further enhanced throughput by expanding channel width up to 160 MHz, improving MIMO support, and using advanced modulation techniques like 256-QAM. It supports multi-user MIMO (MU-MIMO) and reaches speeds over 1 Gbps, ideal for streaming and high-bandwidth applications.
+
+802.11ax:
+Designed for high-density environments like stadiums and urban areas, 802.11ax works in both 2.4 GHz and 5 GHz bands. It utilizes technologies like Orthogonal Frequency Division Multiple Access (OFDMA), MU-MIMO (uplink and downlink), and 1024-QAM to boost efficiency and speed. It offers theoretical speeds up to 10 Gbps and is far more efficient than previous standards.
+
+802.11be:
+The upcoming 802.11be standard, also known as Wi-Fi 7, will support operation in the 2.4 GHz, 5 GHz, and 6 GHz bands. It aims for extreme throughput, with data rates expected to exceed 30 Gbps using features like 320 MHz channels, Coordinated MU-MIMO, and 4096-QAM modulation.

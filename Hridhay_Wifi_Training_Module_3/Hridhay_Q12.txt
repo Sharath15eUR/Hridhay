@@ -1,0 +1,7 @@
+The data rate in Wi-Fi is calculated using the formula:
+Data Rate = (Number of Data Subcarriers) × (Bits per Subcarrier) × (Coding Rate) × (Symbol Rate)
+
+1)Number of Data Subcarriers: Depends on channel bandwidth.
+2)Bits per Subcarrier: Based on modulation scheme.
+3)Coding Rate: Represents FEC efficiency.
+4)Symbol Rate: Determined by OFDM symbol duration.

@@ -1,0 +1,5 @@
+PPDU (Physical Layer Protocol Data Unit) is the final frame that is transmitted over the air. It includes the PLCP preamble and header along with the data payload. It ensures synchronization and proper decoding of data at the receiver.
+
+PLCP (Physical Layer Convergence Protocol) is a sublayer that prepares the MAC frame for transmission. It adds a preamble and header, which helps synchronize and describe the data format for the receiving device.
+
+PMD (Physical Medium Dependent) sublayer handles the actual transmission and reception of data over the wireless channel. It translates the digital data into signals appropriate for the medium (radio frequency) and performs modulation, transmission, and reception at the physical level.
