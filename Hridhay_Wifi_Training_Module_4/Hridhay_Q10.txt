@@ -1,0 +1,4 @@
+The workings of A-MSDU, A-MPDU, A-MSDU in A-MPDU are as follows:
+1)A-MSDU: Aggregates multiple upper-layer packets (MSDUs) into a single MAC layer frame body to reduce overhead between those packets. The entire A-MSDU is protected by a single CRC.
+2)A-MPDU: Aggregates multiple MAC layer frames (MPDUs) into a single physical layer transmission to reduce overhead between those frames. Each MPDU within an A-MPDU has its own CRC, allowing for selective retransmission.
+3)A-MSDU in A-MPDU: Combines both techniques by first aggregating MSDUs into an A-MSDU, and then including this A-MSDU as one of the MPDUs within an A-MPDU, achieving a greater reduction in overall overhead and improved efficiency.

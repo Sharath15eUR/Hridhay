@@ -1,0 +1,8 @@
+IEEE 802.11 block acknowledgment is a feature of the Media Access Control (MAC) layer of the 802.11 protocol that is designed to increase throughput by reducing protocol overhead. It works by allowing a single block acknowledgment frame to acknowledge the reception of multiple packets, instead of individually acknowledging each packet with a separate acknowledgement (ACK) frame. This reduces the number of ACK frames and corresponding interframe spaces, resulting in increased throughput.
+
+The adavntages are as follows
+1)Reduced Overhead: Sending one Block ACK for multiple frames significantly reduces the number of acknowledgment frames transmitted. This decreases the overhead on the wireless medium, freeing up bandwidth for more data transmission.
+2)Improved Efficiency: By reducing the number of control frames, the overall efficiency of data transfer increases, leading to higher throughput.
+3)Lower Congestion: Fewer acknowledgment frames contribute to less congestion on the wireless network, especially in scenarios with high data rates or a large number of stations.
+4)Enhanced Reliability: While it acknowledges a block, the mechanism usually includes information to identify lost frames within the block, allowing for selective retransmission of only the missing frames, further improving efficiency compared to retransmitting the entire block.
+5)Power Savings: By reducing the number of transmissions and receptions for acknowledgments, devices can potentially save power.

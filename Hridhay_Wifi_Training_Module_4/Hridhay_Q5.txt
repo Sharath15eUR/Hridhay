@@ -1,0 +1,13 @@
+1)A mobile station begins the network discovery process by sending out a probe request. This request advertises the device's supported data rates and capabilities (like support for 802.11n). It is broadcast to all nearby access points (APs) using a destination and BSSID of ff:ff:ff:ff:ff:ff, ensuring all APs in range receive it and have the chance to respond.
+
+2)Upon receiving the probe request, each AP checks if it shares at least one common supported data rate with the mobile station. If so, it replies with a probe response. This response includes the SSID (network name), supported data rates, encryption requirements, and other capabilities. The mobile station collects these responses and selects compatible networks based on criteria such as encryption compatibility, then moves on to perform low-level 802.11 authentication.
+
+3)Once a compatible network is selected, the mobile station initiates the authentication process by sending an 802.11 authentication frame to the chosen AP. This frame specifies an open authentication method and includes a sequence number of 0x0001.
+
+4)The AP processes the authentication request and responds with a matching authentication frame, indicating open authentication and using a sequence number of 0x0002. If an AP receives any frame from a mobile station that is not yet authenticated—other than a probe or authentication frame—it will send a deauthentication frame, resetting the station's status. Although a mobile station can authenticate with multiple APs, it can only associate and actively communicate through one AP at a time.
+
+5)After completing authentication, the mobile station decides which AP to connect to and sends an association request. This request includes selected encryption settings and confirms that the mobile device supports the necessary 802.11 capabilities for communication with the chosen AP.
+
+6)The AP evaluates the association request and, if all the parameters match, assigns an Association ID to the mobile station. It then sends an association response with a success status, officially allowing the mobile station to join the network.
+
+7)At this point, the mobile station is successfully authenticated and associated with the AP. The network connection is established, and data transmission between the mobile device and the AP can now begin.

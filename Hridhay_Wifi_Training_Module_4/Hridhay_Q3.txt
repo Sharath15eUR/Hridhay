@@ -1,0 +1,14 @@
+MAC layer provides the following functionalities in various planes:
+
+Management Plane:
+1)Handles client association
+2)Power management
+3)Security management
+4)Traffic priority management
+
+Control plane:
+1)Handles Flow Control
+2)Medium Access Control
+
+Data plane:
+Handles data transmission b/w 2 end points of the wireless network

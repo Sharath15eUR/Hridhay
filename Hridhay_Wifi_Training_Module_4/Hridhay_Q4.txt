@@ -1,0 +1,5 @@
+Scanning is the process in which a WiFi client discovers a Wifi AP in the wireless domain. There are 2 methods of scanning.
+
+Active Scanning – In this method, the wireless client initiates communication by sending a Probe Request frame that includes its capabilities. When an Access Point (AP) receives this request, it processes it and replies with a Probe Response frame, which contains the AP's capabilities. The client then uses this information to decide which AP to connect to.
+
+Passive Scanning – In passive scanning, the AP periodically (around every 100 ms) broadcasts Beacon frames. These frames include details about the AP’s capabilities. The client listens for these beacons to gather information about available networks without sending any requests.

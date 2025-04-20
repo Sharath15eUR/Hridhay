@@ -1,0 +1,10 @@
+The methodologies of MAC layer are as follows:
+
+1)PCF:
+In this polling-based wireless transmission method, stations must wait for the Access Point (AP) to explicitly poll them before transmitting. The AP maintains a polling list and uses CF-Poll frames to grant transmission permission to each station in a round-robin manner until a maximum duration is reached, after which the polling cycle restarts.
+
+2)DCF:
+The Distributed Coordination Function (DCF) is a CSMA/CA-based channel access method in Wi-Fi where all devices contend for the medium. Before transmitting, a station senses the channel and enters a random backoff period if it's free. This backoff time is determined by a contention window and slot time, and the countdown pauses when the channel is busy. Transmission occurs when the backoff reaches zero, and success is confirmed by an ACK.
+
+3)EDCA:
+EDCA is a QoS-enhanced version of DCF that prioritizes traffic during channel contention, unlike DCF and PCF. It uses separate traffic queues in the radio hardware and considers parameters like shorter Arbitration Inter-Frame Space (AIFS), smaller contention window (CWmin, CWmax), and Transmission Opportunity (TXOP) limits for higher priority traffic.

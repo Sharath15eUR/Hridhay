@@ -1,0 +1,13 @@
+Working of EAPOL 4 way handshake
+1)At the start of the 4-way handshake, both the Access Point and the 802.11 station contain the PMK
+2)The Access Point and the 802.11 Station generate a random sequence at their respective ends
+3)The Access point random sequence is termed as ANonce (Short for AP Nonce) and the 802.11 Station random sequence is termed as SNonce (Short for Station Nonce)
+4)The Access Point sends the AP Nonce in the first EAPOL message to the 802.11 Station
+5)The different elements now in the possession of the 802.11 station are AP Nonce, Station Nonce, Station MAC Address, AP MAC Address
+6)The 802.11 Station – now has all the material to generate the Pairwise Transient Key – PTK, a key which is used to generate further keys and temporal keys for Data encapsulation.
+7)The 802.11 station sends the Station Nonce to the AP in EAPOL Message 2 along-with a MIC value (i.e. MIC(Key Confirmation Key, EAPOL)) which is computed over the body of the EAPOL key frame with the Key MIC field initially set to Zero
+8)The Access Point on receipt of the SNonce – generates the Pairwise Transient Key and re-computes the MIC at its end.
+9)The Access Point goes ahead verifies the MIC at its end and sends a response to the 802.11 station
+10)The supplicant verifies the MIC and sends Message 4 to the Access point with a MIC calculation. At this Juncture – the 802.11 station has the necessary Key material to configure to the hardware and the 802.11 station can go ahead and configure the Hardware with the PTK and the GTK
+11)The Access point on receiving Message 4, will verify the MIC computed and invoke its MLME.SETKEYS request to install the PTK and GTK
+Finally the Data port is opened and unicast Data can be transmitted using the temporal keys in PTK and Multicast data using the GTK

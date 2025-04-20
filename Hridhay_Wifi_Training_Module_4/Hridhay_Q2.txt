@@ -1,0 +1,28 @@
+The fields of 802.11 MAC header are as follows:
+
+Frame Control Field:
+This field contains details about the frame type, transmission rate, and power management information.
+
+Duration Field:
+Indicates how long the wireless medium will be occupied by the current transmission.
+
+Address Fields:
+These fields hold the MAC addresses of the source and destination devices participating in the communication.
+
+Sequence Control Field:
+Used to track the order of transmitted frames and assist with managing frame sequencing.
+
+Frame Body:
+Carries the main payload, which may include IP packets, TCP segments, or UDP datagrams exchanged between devices.
+
+Frame Check Sequence (FCS):
+This field verifies the integrity of the frame's data and helps detect any errors during transmission.
+
+Frame Types – Management, Control, and Data:
+802.11 MAC frames are categorized into three types: management frames for maintaining network operations, control frames for coordinating data flow, and data frames for transmitting user data.
+
+Fragmentation:
+To handle large data packets efficiently, the MAC layer supports fragmentation, splitting them into smaller pieces for transmission.
+
+Acknowledgments:
+Acknowledgment frames confirm the successful receipt of data and signal retransmission if any frames are lost or corrupted.
