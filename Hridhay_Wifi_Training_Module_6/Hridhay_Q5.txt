@@ -1,0 +1,7 @@
+WPA2 is a security protocol used to protect wireless networks, introduced in 2004 by the Wi-Fi Alliance. It became mandatory for all Wi-Fi certified devices by 2006. It replaced the older, weaker encryption methods (like RC4 and TKIP) with AES, a powerful, government-grade encryption standard.
+
+Key Features of WPA2:
+1)For encryption it uses AES (Advanced Encryption Standard) with CCMP for strong data protection.
+2)It Ensures packets aren't tampered with during transmission.
+4)It uses Pre-Shared Key (WPA2-PSK) or Enterprise mode (WPA2-Enterprise).
+5)Avoids weak, outdated encryption like TKIP (though it can still be supported for backward compatibility).

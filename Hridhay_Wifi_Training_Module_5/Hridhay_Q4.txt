@@ -1,0 +1,8 @@
+The significance of the 6GHZ band in wifi 6 are as follows:
+
+1)Wi-Fi 6E unlocks up to 1200 MHz of new spectrum at 6 GHz, significantly expanding network capacity.
+2)Since 6 GHz is newly available, there’s much less interference compared to the crowded 2.4 GHz and 5 GHz bands, leading to better overall performance.
+3)The extra space allows for wider 160 MHz channels, which means faster speeds — ideal for things like high-definition streaming, VR, and gaming.
+4)Less congestion and broader channels result in quicker, lower-latency connections, which improves real-time activities like video chats and gaming.
+5)Only newer Wi-Fi 6E devices can use 6 GHz, ensuring that the network runs with advanced features like OFDMA, MU-MIMO, and TWT without older devices slowing things down.
+

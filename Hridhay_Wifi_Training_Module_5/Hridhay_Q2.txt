@@ -1,0 +1,12 @@
+OFDMA stands for Orthogonal Frequency Division Multiple Access. In Wi-Fi 6, OFDMA divides a Wi-Fi channel into many smaller sub-channels (called Resource Units or RUs).Each sub-channel can be assigned to different devices at the same time, allowing simultaneous communication instead of the old one-at-a-time method.
+
+OFDMA improves network efficiency in the following ways:
+1)Reduces Latency:
+Multiple devices can send or receive data at the same time, meaning no long waiting periods.
+2)Handles More Devices:
+Especially useful in crowded areas where many devices are connected at once.
+3)Efficient Use of Bandwidth: 
+Small packets don’t waste a full channel, they only use a small portion, leaving space for others.
+4)Lower Overhead:
+Fewer gaps and delays compared to traditional Wi-Fi where each device had to wait for its turn.
+

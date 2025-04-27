@@ -1,0 +1,12 @@
+The key features for Wifi 6, 6E and 7 are follows
+
+Wifi 6:
+1) Utilizes 1024 QAM which compared to 256 QAM in wifi 5 offers a 25% boost in spectral efficiency.
+2) Up-Link MU-MIMO which allows multiple devices to transmit simultaneously on different spectrum streams. Wifi 5 had only down-link MU-MIMO.
+3) Has longer OFDM symbol which allows up to 234 usable subcarriers compared to 52 in wifi-5.
+4) A-MPDU size increased from 64kB(wifi-5) to 256kB(wifi6) and the number of A-MPDU supported is increased to 256 from 64.
+
+Wifi 7:
+1)Maximum theoretical speed: Up to 46 Gbps, compared to Wi-Fi 6’s 9.6 Gbps. Wi-Fi 7 supports up to 320 MHz wide channels (double the 160 MHz max in Wi-Fi 6).
+2)MLO – Devices can now connect to multiple frequency bands at once (2.4 GHz, 5 GHz, and 6 GHz).
+3)Wi-Fi 7 introduces 4096-QAM (vs. 1024-QAM in Wi-Fi 6).MU-MIMO: now supports 16 streams (up from 8). OFDMA: better resource scheduling = less congestion. 

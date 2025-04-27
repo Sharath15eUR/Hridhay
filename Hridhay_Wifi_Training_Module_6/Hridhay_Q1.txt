@@ -1,0 +1,10 @@
+The pillars of wifi security are as follows:
+Authentication:
+To ensure that only authorized and legitimate users or devices can access the Wi-Fi network. Without authentication, anyone could connect, leading to potential data breaches, unauthorized access to sensitive information, or misuse of network resources.
+
+Integrity:
+To guarantee that data transmitted across the network has not been altered, tampered with, or corrupted during transmission. It protects against man-in-the-middle attacks and ensures that the information received by the destination is exactly what was sent by the source, maintaining trust and accuracy in communication.
+
+Confidentiality:
+To protect the privacy of data by encrypting it, making it unreadable to unauthorized parties even if intercepted. It prevents eavesdropping and safeguards sensitive user information such as personal data, passwords, banking details, and confidential communications from being exposed.
+

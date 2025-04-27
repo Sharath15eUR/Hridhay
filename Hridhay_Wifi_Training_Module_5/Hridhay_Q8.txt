@@ -1,0 +1,9 @@
+802.11k:
+The purpose of 802.11k is to help Wi-Fi clients (STA) find the best nearby access points (APs) faster by providing a Neighbor Report.
+
+802.11v:
+The purpose of 802.11v is to allow APs to assist their clients in managing their connections, like suggesting better APs, handling sleep/idle notifications, and optimizing network behavior.
+
+They help in roaming since, instead of blindly scanning all channels, the client uses the provided neighbor list to intelligently roam to a better AP, speeding up handoffs and improving roaming performance. The AP can proactively guide the client when to roam and to which AP (using features like BSS Transition Management and Network Assisted Roaming), leading to smoother, faster, and more efficient roaming, especially in dense environments.
+
+

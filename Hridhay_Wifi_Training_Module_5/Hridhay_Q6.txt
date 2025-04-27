@@ -1,0 +1,14 @@
+Wi-Fi 7 (802.11be) has several new features :
+
+1)Wider Channel Bandwidth (320 MHz):
+It doubles the channel width compared to Wi-Fi 6, significantly boosting data speeds.
+2)Higher-Order Modulation (4096-QAM):
+By using 4K-QAM, Wi-Fi 7 enhances data transmission efficiency, offering roughly 20% faster speeds over Wi-Fi 6.
+3)Multi-Link Operation (MLO):
+Devices can connect across multiple frequency bands at the same time, improving reliability and minimizing delays.
+4)Advanced MU-MIMO and OFDMA:
+These technologies have been upgraded to allow better support for more users and optimize how bandwidth is shared.
+5)Preamble Puncturing:
+This feature enables the use of wider channels even in environments where parts of the spectrum are congested.
+6)More Spatial Streams:
+The number of spatial streams has increased up to 16, allowing even more data to be transmitted simultaneously.

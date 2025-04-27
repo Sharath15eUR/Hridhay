@@ -1,0 +1,2 @@
+Authentication is the process of verifying the identity of a device or user before allowing access to the network. It ensures that only authorized users can connect.
+Encryption, on the other hand, is about protecting the data that is transmitted after authentication. Once you are connected, encryption ensures that the information you send over the Wi-Fi network is scrambled in such a way that only intended recipients can understand it. Even if someone intercepts the wireless signal, they cannot read the encrypted data without the correct decryption key.

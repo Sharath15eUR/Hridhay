@@ -1,0 +1,12 @@
+WEP:
+It was introduced in the base standard to provide data confidentiality (encryption). It uses Encryption Keys to encrypt the data. Key length can be 40 or 104 bits long represented by 10 or 26 hex digits 64-bit (24-bit IV + 40-bit Key) 128-bit (24-bit IV + 104-bit Key)
+IV (Initialization Vector) is a random stream of 24 bits that is changed for each packet transmission and its primary purpose is to ensure that two packets don't have the same key stream.
+
+WPA:
+It was intended to provide better security over WEP. It was released as an intermediate solution and as a patchwork to overcome WEP weak securities. It is based on PSK and 802.1x/EAP based authentication. Uses TKIP (Temporal Key Integrity Protocol) based on RC4. Uses 48-bit IV, 64-bit key for authentication, and 128-bit key for encryption. Firmware upgrade is enough to use WPA instead of WEP. User can enter an 8-64 bit ASCII value as the key.
+
+WPA2:
+It uses Advanced Encryption Standard (AES) for encryption. Unlike WPA, this needs hardware support. It uses 128-bit key for data encryption. CBC-MAC (Cipher Block Chaining Message Authentication Code) mode is used to calculate the MIC. Packet Number is used to prevent replay attacks. CCM uses a new temporal key for each session. APs can support WPA + WPA2 modes for backward compatibility.
+
+WPA3:
+It uses GCMP (Galois/Counter Mode Protocol) and also uses 128/192/256-bit keys for data encryption. 384-bit Hashed-based Message Authentication Code (HMAC). 256-bit Broadcast/Multicast Integrity Protocol (BIP-GMAC-256). A unique session key is generated for every individual session a user initiates. Enhanced open security with OWE (Opportunistic Wireless Encryption).
