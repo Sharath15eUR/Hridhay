@@ -1,0 +1,81 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include <string.h>
+
+typedef struct{
+    char dayName[100];
+    char tasks[3][500];
+    int taskCount;
+} Day;
+
+void add(Day week[], const char *dayName, const char *task){
+    for (int i=0;i<7;i++) {
+        if (strcmp(week[i].dayName,dayName)==0) {
+            if (week[i].taskCount < 3) {
+                strcpy(week[i].tasks[week[i].taskCount], task);
+                week[i].taskCount++;
+            }
+            else {
+                printf("Task limit reached for %s.\n", dayName);
+            }
+            return;
+        }
+    }
+    printf("Day not found.\n");
+}
+void display(const Day week[]) {
+    for (int i=0;i<7;i++) {
+        printf("\n%s:\n", week[i].dayName);
+        if (week[i].taskCount==0) {
+            printf("  No tasks.\n");
+        } else {
+            for (int j=0;j<week[i].taskCount;j++) {
+                printf("  - %s\n", week[i].tasks[j]);
+            }
+        }
+    }
+}
+int main(){
+    Day week[7]= {
+        {"Monday",   {}, 0},
+        {"Tuesday",  {}, 0},
+        {"Wednesday",{}, 0},
+        {"Thursday", {}, 0},
+        {"Friday",   {}, 0},
+        {"Saturday", {}, 0},
+        {"Sunday",   {}, 0}
+    };
+    char day[20];
+    char task[500];
+    int a;
+    do{
+        printf("\n1. Add Task\n2. View Tasks\n3. Exit\nEnter choice: ");
+        scanf("%d", &a);
+        getchar();
+        switch(a){
+        case 1:
+                printf("Enter day: ");
+                fgets(day, sizeof(day), stdin);
+                day[strcspn(day, "\n")] = '\0';
+
+                printf("Enter task: ");
+                fgets(task, sizeof(task), stdin);
+                task[strcspn(task, "\n")] = '\0';
+
+                add(week, day, task);
+                break;
+
+            case 2:
+                display(week);
+                break;
+
+            case 3:
+                printf("Exiting...\n");
+                break;
+
+            default:
+                printf("Invalid choice.\n");
+        }
+    }while (a != 3);
+    return 0;
+}
