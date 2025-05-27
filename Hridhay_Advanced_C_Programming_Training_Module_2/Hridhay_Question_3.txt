@@ -1,0 +1,44 @@
+1)fork():
+It is a system call that is used to create a new process which runs parallelly along with the process that made the fork() call. The process that made the call is called the parent process, the process created as a result of the system call is called the child process.
+The different values returned by fork() are as follows -
+
+Negative Value: The creation of a child process was unsuccessful, then it returns -1.
+Zero: Returned to the newly created child process.
+Positive value: Returned to parent or caller. The value contains the process ID of the newly created child process.
+
+2)Handling Common Signals:
+It is a software generated interrupt sent to a process from the operating system. They are identified by integers value. Some of them are
+SIGINT: It is sent when the user presses Ctrl+C
+SIGTERM: This signal requests graceful termination
+SIGKILL: This one forcefully kills a process, it cannot be caught or captured.
+SIGSEGV: This signal is sent when Segmentation fault occurs which is a result of invalid memory access.
+Signals can be handled using the signal() or sigaction() system calls in C
+
+3) Kernel Crashes:
+Kernel crashes, also known as kernel panics, occur due to unrecoverable system errors, often caused by:
+
+Dereferencing NULL or invalid pointers in kernel space
+Improper driver/module code
+Race conditions in kernel threads
+Deadlocks or stack overflows
+
+Tools like dmesg, journalctl, and crash (for core dumps) help in analyzing these failures. Understanding them requires a grasp of kernel modules, memory management, and low-level debugging.
+
+4)Time Complexity:
+Time complexity is used to estimate the execution time of an algorithm as a function of input size n.Understanding time complexity is essential for writing efficient code and optimizing performance. Common complexities include:
+
+O(1) – Constant time
+O(log n) – Logarithmic time (e.g., binary search)
+O(n) – Linear time
+O(n log n) – Linearithmic time (e.g., mergesort)
+O(n²) – Quadratic time (e.g., bubble sort)
+
+5)Locking Mechanism:
+Locks prevent race conditions in concurrent environments:
+
+Mutex (Mutual Exclusion):
+
+It blocks the thread if the lock is not available. It is used in user-space and kernel-space and is suitable for multi-threaded apps.
+
+Spinlock:
+It continuously checks (spins) for the lock to become free. Though it is CPU-intensive but avoids context switching it is highly efficient when lock-hold time is very short.

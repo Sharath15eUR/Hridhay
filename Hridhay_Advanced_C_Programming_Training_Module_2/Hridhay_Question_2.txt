@@ -1,0 +1,96 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <unistd.h>
+#include <stdbool.h>
+#include <signal.h>
+#include <time.h>
+
+int N;
+volatile sig_atomic_t stop = 0;
+void handle_sigint(int sig) {
+    printf("\nSIGINT received. Termination prevented.\n");
+    stop = 1;
+}
+
+bool is_prime(int num) {
+    if (num < 2) return false;
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) return false;
+    }
+    return true;
+}
+
+void* compute_primes(void* arg) {
+    clock_t start = clock();
+
+    int count = 0, num = 2, sum = 0;
+    while (count < N && !stop) {
+        if (is_prime(num)) {
+            sum += num;
+            count++;
+        }
+        num++;
+    }
+
+    printf("Thread A (Prime Sum): Sum of first %d prime numbers = %d\n", N, sum);
+
+    clock_t end = clock();
+    double time_taken = (double)(end - start) / CLOCKS_PER_SEC;
+    printf("Thread A completed in %.2f seconds.\n", time_taken);
+
+    return NULL;
+}
+
+void* print_thread1(void* arg) {
+    clock_t start = clock();
+
+    while (!stop) {
+        printf("Thread 1 running\n");
+        sleep(2);
+    }
+
+    clock_t end = clock();
+    printf("Thread 1 exited after %.2f seconds.\n", (double)(end - start) / CLOCKS_PER_SEC);
+    return NULL;
+}
+
+void* print_thread2(void* arg) {
+    clock_t start = clock();
+
+    int duration = 0;
+    while (duration < 100 && !stop) {
+        printf("Thread 2 running\n");
+        sleep(3);
+        duration += 3;
+    }
+
+    clock_t end = clock();
+    printf("Thread 2 completed in %.2f seconds.\n", (double)(end - start) / CLOCKS_PER_SEC);
+    return NULL;
+}
+
+int main() {
+    pthread_t t1, t2, t3;
+
+    signal(SIGINT, handle_sigint);
+
+    printf("Enter value of N: ");
+    scanf("%d", &N);
+
+    pthread_create(&t1, NULL, compute_primes, NULL);
+    pthread_create(&t2, NULL, print_thread1, NULL);
+    pthread_create(&t3, NULL, print_thread2, NULL);
+
+    pthread_join(t1, NULL);
+    pthread_join(t3, NULL); 
+
+    if (!stop) {
+        pthread_cancel(t2); 
+    }
+
+    pthread_join(t2, NULL); 
+
+    printf("Main thread exiting gracefully.\n");
+    return 0;
+}
